@@ -1,0 +1,33 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="時間軸圖示">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16161f"/>
+      <stop offset="1" stop-color="#0a0a10"/>
+    </linearGradient>
+    <linearGradient id="spine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6384d"/>
+      <stop offset="0.5" stop-color="#d97757"/>
+      <stop offset="1" stop-color="#e9c45c"/>
+    </linearGradient>
+    <linearGradient id="haloV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6384d" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#d97757" stop-opacity="0.40"/>
+      <stop offset="1" stop-color="#e9c45c" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 底磚 -->
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="url(#tile)"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="13.5" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1"/>
+
+  <!-- 軸線柔光 -->
+  <rect x="22" y="10" width="20" height="44" rx="10" fill="url(#haloV)"/>
+
+  <!-- 飽滿漸層時間軸主軸 -->
+  <rect x="27.5" y="11" width="9" height="42" rx="4.5" fill="url(#spine)"/>
+
+  <!-- 白色事件刻度（統一白色 → 脫離紅綠燈聯想） -->
+  <circle cx="32" cy="19" r="2.7" fill="#ffffff"/>
+  <circle cx="32" cy="32" r="3.1" fill="#ffffff"/>
+  <circle cx="32" cy="45" r="2.7" fill="#ffffff"/>
+</svg>

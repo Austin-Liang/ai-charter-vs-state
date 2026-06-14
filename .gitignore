@@ -6,3 +6,8 @@ doc/
 
 # 建置用暫存（OG 預覽卡原始檔，只發布成品 og-cover.png）
 og-card.html
+
+# 建置用暫存（favicon 渲染原始檔與母圖，只發布成品 favicon.* / apple-touch-icon.png）
+favicon-render.html
+favicon-512.png
+_preview32.png
