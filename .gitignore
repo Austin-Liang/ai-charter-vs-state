@@ -4,5 +4,5 @@
 # 原始事件簿來源文件（不公開）
 doc/
 
-# 原始命名版本（repo 以 index.html 為準）
-anthropic_vs_trump_2026.html
+# 建置用暫存（OG 預覽卡原始檔，只發布成品 og-cover.png）
+og-card.html
