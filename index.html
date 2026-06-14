@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-lang="zh">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>try{if(localStorage.getItem('avt-lang')==='en'){document.documentElement.setAttribute('data-lang','en');document.documentElement.lang='en';}}catch(e){}</script>
 <title>國家機器 vs. AI 憲章 — Anthropic 與川普政府的全面對抗事件簿（2025–2026）</title>
 <meta name="description" content="一場國家隱形之手與科技企業『安全憲章』的全面戰爭。互動式時間軸專題，由上至下捲動，附權威報導引用。">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -277,6 +278,15 @@
   .modeswitch button.active{color:#fff; background:var(--anthropic); background:linear-gradient(180deg, color-mix(in srgb,var(--anthropic) 72%, #000), color-mix(in srgb,var(--anthropic) 42%, #000)); box-shadow:0 4px 14px -6px var(--anthropic)}
   .modeswitch button:hover:not(.active){color:var(--ink)}
 
+  /* ---------- 繁/英 雙語切換 ---------- */
+  .le{display:none}                              /* 預設顯示繁中、隱藏英文 */
+  html[data-lang="en"] .lz{display:none}
+  html[data-lang="en"] .le{display:inline}
+  .langswitch{position:fixed; top:14px; right:16px; z-index:62; display:flex; gap:2px; padding:3px; border-radius:999px; background:rgba(16,17,26,.82); border:1px solid var(--line-dim); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px)}
+  .langswitch button{-webkit-appearance:none; appearance:none; border:0; cursor:pointer; font-family:var(--sans); font-size:11.5px; letter-spacing:.03em; color:var(--muted); background:transparent; padding:7px 12px; border-radius:999px; transition:.25s}
+  .langswitch button.active{color:#fff; background:var(--court); background:color-mix(in srgb,var(--court) 64%, #000); box-shadow:0 4px 14px -6px var(--court)}
+  .langswitch button:hover:not(.active){color:var(--ink)}
+
   /* ---------- 逐頁導覽（僅 snap 模式顯示） ---------- */
   .snapnav{display:none}
   html.snap-mode .snapnav{position:fixed; bottom:20px; left:50%; transform:translateX(-50%); z-index:62; display:flex; align-items:center; gap:14px; padding:7px 9px; border-radius:999px; background:rgba(16,17,26,.86); border:1px solid var(--line-dim); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); font-family:var(--mono); font-size:12px; color:var(--ink-dim); box-shadow:0 14px 40px -18px #000}
@@ -332,6 +342,8 @@
     .allsrc{columns:1}
     .modeswitch{top:9px; left:9px; padding:2px}
     .modeswitch button{padding:6px 9px; font-size:10px}
+    .langswitch{top:9px; right:9px; padding:2px}
+    .langswitch button{padding:6px 8px; font-size:10px}
     html.snap-mode .event{padding:58px 12px 74px}
     html.snap-mode .event .card{max-height:calc(100vh - 128px); max-height:calc(100svh - 128px)}
   }
@@ -358,15 +370,20 @@
 <div class="topbar">
   <div class="progress" id="progress"></div>
   <div class="balance" id="balance">
-    <span class="lbl s">國家機器</span>
+    <span class="lbl s"><span class="lz">國家機器</span><span class="le">State</span></span>
     <span class="track"><span class="knob" id="knob"></span></span>
     <span class="lbl a">Anthropic</span>
   </div>
 </div>
 
-<div class="modeswitch" id="modeswitch" role="group" aria-label="閱讀模式">
-  <button data-mode="scroll" class="active" type="button">📜 連續捲動</button>
-  <button data-mode="snap" type="button">🖥 逐頁全螢幕</button>
+<div class="modeswitch" id="modeswitch" role="group" aria-label="閱讀模式 / Reading mode">
+  <button data-mode="scroll" class="active" type="button"><span class="lz">📜 連續捲動</span><span class="le">📜 Scroll</span></button>
+  <button data-mode="snap" type="button"><span class="lz">🖥 逐頁全螢幕</span><span class="le">🖥 Pages</span></button>
+</div>
+
+<div class="langswitch" id="langswitch" role="group" aria-label="Language">
+  <button data-lang="zh" class="active" type="button">繁中</button>
+  <button data-lang="en" type="button">EN</button>
 </div>
 
 <div class="snapnav" id="snapnav" aria-label="逐頁導覽">
@@ -380,31 +397,31 @@
 <!-- ===== HERO ===== -->
 <header class="hero">
   <div class="glowA"></div><div class="glowB"></div>
-  <div class="eyebrow"><span class="dot"></span>深度互動專題 · 情境推演 · 2025–2026</div>
-  <h1><span class="a">國家機器</span><span class="vs">vs.</span><span class="b">AI 憲章</span></h1>
-  <div class="sub">Anthropic 與川普政府的全面對抗事件簿</div>
+  <div class="eyebrow"><span class="dot"></span><span class="lz">深度互動專題 · 情境推演 · 2025–2026</span><span class="le">In-Depth Interactive Feature · Scenario · 2025–2026</span></div>
+  <h1><span class="a"><span class="lz">國家機器</span><span class="le">State Power</span></span><span class="vs">vs.</span><span class="b"><span class="lz">AI 憲章</span><span class="le">The AI Charter</span></span></h1>
+  <div class="sub"><span class="lz">Anthropic 與川普政府的全面對抗事件簿</span><span class="le">A Dossier of the Total Confrontation Between Anthropic and the Trump Administration</span></div>
   <div class="span">2 0 2 5 &nbsp;—&nbsp; 2 0 2 6</div>
-  <p class="lede">這是一場國家隱形之手與科技企業「安全憲章」的激烈衝突。隨著政府力量步步進逼，雙方的矛盾在短短半年內迅速白熱化，演變成一場攸關企業生存、地緣政治、宗教道德與華爾街資本的全面戰爭。</p>
-  <div class="badge-spec">⚠️ 本專題為持續發展中的爭議事件彙整，部分情節具高度推測性，請對照文末引用之原始報導</div>
-  <div class="scrollcue"><div class="mouse"></div>向下捲動 · 進入時間軸</div>
+  <p class="lede"><span class="lz">這是一場國家隱形之手與科技企業「安全憲章」的激烈衝突。隨著政府力量步步進逼，雙方的矛盾在短短半年內迅速白熱化，演變成一場攸關企業生存、地緣政治、宗教道德與華爾街資本的全面戰爭。</span><span class="le">A fierce clash between the invisible hand of the state and a tech company's "safety charter." As the government's pressure mounted, the standoff boiled over within six months into a total war spanning corporate survival, geopolitics, religious morality, and Wall Street capital.</span></p>
+  <div class="badge-spec"><span class="lz">⚠️ 本專題為持續發展中的爭議事件彙整，部分情節具高度推測性，請對照文末引用之原始報導</span><span class="le">⚠️ A compilation of a developing, contested story; some elements are highly speculative — cross-check against the original reporting linked at the foot of the page.</span></div>
+  <div class="scrollcue"><div class="mouse"></div><span class="lz">向下捲動 · 進入時間軸</span><span class="le">Scroll down · Enter the timeline</span></div>
 </header>
 
 <!-- ===== 導讀 ===== -->
 <section class="intro">
-  <h2>兩股力量的對撞</h2>
-  <p>一邊是握有行政命令、國防採購與安全審查大權的國家機器；一邊是把「不傷害人類」寫進公司治理核心的 AI 實驗室。當軍事化的需求撞上安全憲章的紅線，衝突無可避免。</p>
+  <h2><span class="lz">兩股力量的對撞</span><span class="le">A Collision of Two Forces</span></h2>
+  <p><span class="lz">一邊是握有行政命令、國防採購與安全審查大權的國家機器；一邊是把「不傷害人類」寫進公司治理核心的 AI 實驗室。當軍事化的需求撞上安全憲章的紅線，衝突無可避免。</span><span class="le">On one side, the state — armed with executive orders, defense procurement, and security review. On the other, an AI lab that wrote "do not harm humanity" into its corporate core. When the demand for militarization hit the red line of the safety charter, conflict became inevitable.</span></p>
   <div class="forces">
     <div class="force state">
       <div class="ico">🏛️</div>
-      <h3>國家機器</h3>
-      <p>以國家安全與「活躍軍事衝突」為名，動用行政命令、供應鏈黑名單、國安備忘錄與出口管制，要求 AI 供應商無條件服從軍事化部署。</p>
-      <span class="who">川普政府 · 戰爭部 · 財政部 / NSA / CISA</span>
+      <h3><span class="lz">國家機器</span><span class="le">State Power</span></h3>
+      <p><span class="lz">以國家安全與「活躍軍事衝突」為名，動用行政命令、供應鏈黑名單、國安備忘錄與出口管制，要求 AI 供應商無條件服從軍事化部署。</span><span class="le">Invoking national security and an "active military conflict," it wields executive orders, supply-chain blacklists, national-security memoranda, and export controls to demand AI suppliers submit unconditionally to militarized deployment.</span></p>
+      <span class="who"><span class="lz">川普政府 · 戰爭部 · 財政部 / NSA / CISA</span><span class="le">Trump Administration · War Dept. · Treasury / NSA / CISA</span></span>
     </div>
     <div class="vsmid">⚔</div>
     <div class="force anth">
       <div class="ico">⚖️</div>
       <h3>Anthropic</h3>
-      <p>以「負責任擴展政策（RSP）」與安全憲章為盾，拒絕將模型用於自主武器與大規模監控，並動員司法、梵蒂岡道義與華爾街資本築起防線。</p>
+      <p><span class="lz">以「負責任擴展政策（RSP）」與安全憲章為盾，拒絕將模型用於自主武器與大規模監控，並動員司法、梵蒂岡道義與華爾街資本築起防線。</span><span class="le">Shielded by its "Responsible Scaling Policy (RSP)" and safety charter, it refuses to let its models power autonomous weapons or mass surveillance — mobilizing the courts, the Vatican's moral authority, and Wall Street capital to build its defenses.</span></p>
       <span class="who">Dario Amodei · Claude / Fable / Mythos</span>
     </div>
   </div>
@@ -418,28 +435,29 @@
 <!-- ===== 後續焦點 + 結語 ===== -->
 <section class="outro">
   <div class="focus">
-    <h2>🔍 現階段焦點：一場「防禦泥巴戰」</h2>
-    <p>在反駁政府指控的「越獄（Jailbreak）」漏洞時，Anthropic 嘗試<strong>將 OpenAI 的 GPT-5.5 一起拖下水</strong>，主張這是前沿大型模型的<strong>行業共同技術邊界</strong>，而非單一企業的安全疏失。Anthropic 並指出，若以「發現單一狹窄越獄就須全球召回」為標準，將實質凍結所有前沿模型供應商的新模型發布。</p>
+    <h2><span class="lz">🔍 現階段焦點：一場「防禦泥巴戰」</span><span class="le">🔍 Current Focus: A "Defensive Mud-Fight"</span></h2>
+    <p><span class="lz">在反駁政府指控的「越獄（Jailbreak）」漏洞時，Anthropic 嘗試<strong>將 OpenAI 的 GPT-5.5 一起拖下水</strong>，主張這是前沿大型模型的<strong>行業共同技術邊界</strong>，而非單一企業的安全疏失。Anthropic 並指出，若以「發現單一狹窄越獄就須全球召回」為標準，將實質凍結所有前沿模型供應商的新模型發布。</span><span class="le">Rebutting the government's alleged "jailbreak" flaw, Anthropic tried to <strong>drag OpenAI's GPT-5.5 down with it</strong>, arguing this is a <strong>shared technical frontier</strong> of all large frontier models — not one company's lapse. It added that if "finding a single narrow jailbreak" triggered a global recall, that standard would effectively freeze new-model releases across every frontier provider.</span></p>
     <div class="src-list" style="--c:var(--anthropic); margin-top:14px">
-      <a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noopener"><span class="pub">Anthropic</span> 對 Fable 5 / Mythos 暫停存取的聲明 <span class="arrow">↗</span></a>
-      <a href="https://www.explainx.ai/blog/us-government-bans-fable-5-mythos-5-anthropic-export-control-2026" target="_blank" rel="noopener"><span class="pub">explainx</span> Fable 5 禁令全解析 <span class="arrow">↗</span></a>
+      <a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank" rel="noopener"><span class="pub">Anthropic</span> <span class="lz">對 Fable 5 / Mythos 暫停存取的聲明</span><span class="le">Statement on suspending Fable 5 / Mythos access</span> <span class="arrow">↗</span></a>
+      <a href="https://www.explainx.ai/blog/us-government-bans-fable-5-mythos-5-anthropic-export-control-2026" target="_blank" rel="noopener"><span class="pub">explainx</span> <span class="lz">Fable 5 禁令全解析</span><span class="le">Full breakdown of the Fable 5 ban</span> <span class="arrow">↗</span></a>
     </div>
   </div>
   <div class="summary">
-    <p class="big">這一連串事件<span class="hl">環環相扣</span>。國家的隱形之手越是強硬想要伸入 AI 核心，企業與政府圍繞在<span class="hl">技術自主、軍事道德</span>之間的矛盾就越發激烈。</p>
+    <p class="big"><span class="lz">這一連串事件<span class="hl">環環相扣</span>。國家的隱形之手越是強硬想要伸入 AI 核心，企業與政府圍繞在<span class="hl">技術自主、軍事道德</span>之間的矛盾就越發激烈。</span><span class="le">Every link in this chain is <span class="hl">interlocked</span>. The harder the invisible hand of the state reaches into the heart of AI, the fiercer the clash between company and government grows over <span class="hl">technical autonomy and the ethics of war</span>.</span></p>
   </div>
 </section>
 
 <!-- ===== Footer ===== -->
 <footer>
   <div class="wrap">
-    <h4>延伸閱讀 · 全部引用來源</h4>
+    <h4><span class="lz">延伸閱讀 · 全部引用來源</span><span class="le">Further Reading · All Cited Sources</span></h4>
     <div class="allsrc" id="allsrc"></div>
     <div class="disclaimer">
-      <b>關於本專題的說明</b><br>
-      本頁為依據事件簿文件製作的<b>互動式時間軸新聞專題</b>，整合多家媒體與官方文件之公開報導並逐一附上連結。事件牽涉政治、法律與企業攻防，發展快速且高度爭議；其中 <b>2026 年 3 月 31 日「Claude Code 洩露是否為刻意而為」屬未經證實之揣測</b>，已於該節點明確標示。部分前沿模型（Fable 5、Mythos）與條款細節仍在訴訟與政策角力中，最終結論請以官方文件與權威媒體後續查證為準。<br><br>各事件<b>背景圖取自 Wikimedia Commons</b>（公有領域／創用 CC 授權，含美國政府公開作品與 Unsplash 等），為相關主體之示意影像，非特定報導當下的新聞照片。
+      <span class="lz"><b>關於本專題的說明</b><br>
+      本頁為依據事件簿文件製作的<b>互動式時間軸新聞專題</b>，整合多家媒體與官方文件之公開報導並逐一附上連結。事件牽涉政治、法律與企業攻防，發展快速且高度爭議；其中 <b>2026 年 3 月 31 日「Claude Code 洩露是否為刻意而為」屬未經證實之揣測</b>，已於該節點明確標示。部分前沿模型（Fable 5、Mythos）與條款細節仍在訴訟與政策角力中，最終結論請以官方文件與權威媒體後續查證為準。<br><br>各事件<b>背景圖取自 Wikimedia Commons</b>（公有領域／創用 CC 授權，含美國政府公開作品與 Unsplash 等），為相關主體之示意影像，非特定報導當下的新聞照片。</span><span class="le"><b>About this feature</b><br>
+      This page is an <b>interactive timeline news feature</b> built from a source dossier, compiling and linking public reporting from many outlets and official documents. The story spans politics, law, and corporate maneuvering — fast-moving and highly contested. In particular, <b>whether the March 31, 2026 "Claude Code leak" was deliberate is unverified speculation</b>, clearly flagged at that node. Some frontier models (Fable 5, Mythos) and clause details remain in litigation and policy contention; treat official documents and subsequent authoritative reporting as definitive.<br><br>Event <b>background images are from Wikimedia Commons</b> (public domain / Creative Commons, including U.S. government works and Unsplash) and are illustrative of the subjects, not news photos from the moment of reporting.</span>
     </div>
-    <div class="colophon">製作 · 國家機器 vs. AI 憲章　|　時間軸專題　|　資料截至 2026-06　|　Sources: Anthropic, The White House, Vatican, TIME, Fortune, CNBC, CNN, Axios, The Hill, Fox News, Military.com, Federal News Network, Vatican News 等</div>
+    <div class="colophon"><span class="lz">製作 · 國家機器 vs. AI 憲章　|　時間軸專題　|　資料截至 2026-06　|　Sources: Anthropic, The White House, Vatican, TIME, Fortune, CNBC, CNN, Axios, The Hill, Fox News, Military.com, Federal News Network, Vatican News 等</span><span class="le">Produced · State Power vs. The AI Charter　|　Interactive Timeline Feature　|　Data as of 2026-06　|　Sources: Anthropic, The White House, Vatican, TIME, Fortune, CNBC, CNN, Axios, The Hill, Fox News, Military.com, Federal News Network, Vatican News, etc.</span></div>
   </div>
 </footer>
 
@@ -628,13 +646,147 @@ const EVENTS = [
   }
 ];
 
+/* ====================== 英文翻譯（與 EVENTS 同索引；僅可翻譯欄位） ====================== */
+const EVENTS_EN = [
+  {
+    date:`Late 2025`, chapter:`The Spark`, sideLabel:`⚖ Anthropic Refuses`,
+    title:`Militarization Flashpoint — Anthropic Holds the Line on Its "Safety Charter"`,
+    body:[
+      `Reports emerged that the Trump administration intended to deploy Anthropic's AI in <strong>military operations</strong>. Anthropic flatly refused, vowing to uphold its <strong>"safety charter" and Responsible Scaling Policy (RSP)</strong> — planting the seed of the conflict.`,
+      `Anthropic feared its technology would be used for <span class="em-state">mass domestic surveillance</span> and <span class="em-state">lethal weapons that fire without human intervention</span>. CEO Dario Amodei later said publicly that the company "<strong>cannot in good conscience accede</strong>."`
+    ],
+    tags:[`Militarization`,`Safety Charter`,`RSP`,`Autonomous Weapons`],
+    sources:[`Responsible Scaling Policy (official)`,`Anthropic refuses to bend to the Pentagon`]
+  },
+  {
+    date:`January 2026`, chapter:`Going Public`, sideLabel:`⚑ Conflict Surfaces`,
+    title:`The Rift Breaks Into the Open`,
+    body:[
+      `After private talks collapsed, the dispute became <strong>public</strong>, drawing intense attention from tech and politics. The Pentagon demanded renegotiation, insisting the military be able to use Claude "<strong>for all lawful purposes</strong>" without restriction; Anthropic refused.`,
+      `What began as a behind-closed-doors struggle became a public debate over the boundary between the AI industry and state power.`
+    ],
+    tags:[`Talks Collapse`,`Pentagon`,`Public Debate`],
+    sources:[`Trump threatens a federal ban on Anthropic`]
+  },
+  {
+    date:`Feb 27, 2026`, chapter:`Political Framing`, sideLabel:`🏛 Executive Order`,
+    title:`Presidential Executive Order and the "Woke" Framing`,
+    body:[
+      `President Trump issued an executive order requiring <strong>all federal agencies to "immediately stop" using Anthropic's technology</strong> (the Pentagon got six months to phase out systems already embedded in military platforms).`,
+      `Trump then publicly lambasted Anthropic on <em>Truth Social</em>, framing the fight as a "patriots vs. woke" showdown.`
+    ],
+    callout:{text:`"The United States of America will NEVER allow a radical left, WOKE company to dictate how our great Military fights and wins wars!"`, src:`— Trump on Truth Social (original in all caps)`},
+    tags:[`Executive Order`,`Truth Social`,`woke`,`Federal Ban`],
+    sources:[`Trump orders agencies to stop using Anthropic AI`,`Full context as the dispute nears its deadline`]
+  },
+  {
+    date:`Late Feb 2026`, chapter:`Blacklist`, sideLabel:`🏛 Supply-Chain Risk`,
+    title:`Blacklisted, and Forced to Rip-and-Replace`,
+    body:[
+      `War Secretary <strong>Pete Hegseth</strong> ordered Anthropic placed on the <span class="em-state">"supply-chain risk"</span> list — a label normally reserved for foreign adversaries.`,
+      `The directive stated: "Effective immediately, no contractor, supplier, or partner doing business with the U.S. military may conduct any commercial activity with Anthropic." It effectively barred Anthropic across the entire defense industrial base and demanded a technology rip-and-replace within six months.`
+    ],
+    tags:[`Supply-Chain Risk`,`Hegseth`,`War Dept.`,`Defense Industry`],
+    sources:[`Court freezes the Pentagon's supply-chain risk designation`,`The Department's war with Anthropic: litigation update`]
+  },
+  {
+    date:`Mar 26, 2026`, chapter:`Legal Battle`, sideLabel:`⚖️ Injunction (Anthropic Wins)`,
+    title:`Anthropic Strikes Back: District Court Grants an Injunction`,
+    body:[
+      `Anthropic promptly sued. San Francisco federal judge <strong>Rita Lin</strong> granted a preliminary injunction, temporarily freezing the presidential directive, the Hegseth blacklist, and the supply-chain risk designation — finding the government's actions bore the clear mark of <span class="em-anth">"punitive political retaliation."</span>`
+    ],
+    callout:{text:`"Nothing in the governing statute supports the Orwellian notion that an American company may be branded a potential adversary and saboteur of the U.S. for expressing disagreement with the government."`, src:`— Judge Rita Lin, order`},
+    tags:[`Preliminary Injunction`,`Political Retaliation`,`Rita Lin`,`Orwellian`],
+    sources:[`Judge freezes the Pentagon's blacklisting of Anthropic`,`Judge slams the "Orwellian" blacklist`]
+  },
+  {
+    date:`Mar 31, 2026`, chapter:`The Mystery`, sideLabel:`⚠ Claude Code Leak`,
+    title:`The Shocking Claude Code Source-Code "Leak"`,
+    body:[
+      `A 59.8 MB JavaScript source map (.map) was bundled into the public npm package <code>@anthropic-ai/claude-code</code>, accidentally exposing <strong>~512,000 lines across 1,906 files</strong> of source code — revealing 44 hidden feature flags and an unreleased model codenamed <strong>"Mythos."</strong>`,
+      `Within hours the code was mirrored across GitHub, amassing 80,000+ stars and forks before Anthropic could issue DMCA takedowns. The company called it a <strong>packaging mistake, not a breach</strong>, with no user data or credentials affected.`
+    ],
+    callout:{label:`The conspiracy angle · unverified speculation`, text:`Could this "accidental leak" have been deliberate — Anthropic warning the Trump administration not to push further, signaling it would rather open everything up and burn it all down? (This is unproven speculation; officials attribute it to a source-map setting in the Bun bundler.)`},
+    tags:[`Source Leak`,`Mythos`,`source map`,`DMCA`,`Conspiracy`],
+    sources:[`Anthropic leaks Claude Code source`,`Security-threat analysis of the leak`,`Inside the leak and the Bun source-map bug`]
+  },
+  {
+    date:`Apr 8, 2026`, chapter:`Legal Reversal`, sideLabel:`⚖️ Appeal Reverses (Govt Wins)`,
+    title:`The Scales Tip: Appeals Court Strips the Protection`,
+    body:[
+      `The Washington, D.C. federal appeals court <strong>overturned the district court's protection</strong>, denying Anthropic's bid to temporarily block the Pentagon blacklist. It held that during an <span class="em-state">active military conflict</span>, the judiciary should not interfere with the War Department's security discretion over a critical AI supplier.`
+    ],
+    callout:{text:`"On one side is a relatively contained risk of financial harm to a single private company. On the other is judicial management of how, and through whom, the Department of War secures vital AI technology during an active military conflict."`, src:`— D.C. Circuit panel`},
+    tags:[`Appeals Court`,`Injunction Overturned`,`Active Conflict`,`Discretion`],
+    sources:[`Anthropic loses bid to block the blacklist`,`Appeals court rebuffs Anthropic again`]
+  },
+  {
+    date:`May 25, 2026`, chapter:`Moral Defense`, sideLabel:`✝ Vatican Alliance`,
+    title:`Allied With the Pope: The Encyclical "Magnifica Humanitas"`,
+    body:[
+      `Facing an existential crisis, Anthropic launched its most dramatic "moral defense" — joining with Pope <strong>Leo XIV</strong> to release his first encyclical, <strong>"Magnifica Humanitas: Protecting Human Dignity in the Age of Artificial Intelligence."</strong>`,
+      `The 42,000-word encyclical was presented by the Pope in person at the Vatican — unusually, <strong>alongside an Anthropic co-founder</strong> — arguing that "AI must serve humanity, not concentrate power."`,
+      `Political ripples: ① a global moral endorsement that directly rebutted Trump's "woke" charge; ② a deep tremor at the White House, since Christians and Catholics are among Trump's core base.`
+    ],
+    tags:[`Pope Leo XIV`,`Magnifica Humanitas`,`Encyclical`,`Human Dignity`,`Moral Backing`],
+    sources:[`Pope: AI must serve humanity, not concentrate power`,`Pope warns of AI dangers in his first encyclical`,`Pope presents encyclical alongside Anthropic co-founder`,`Full text of the encyclical (official)`]
+  },
+  {
+    date:`Jun 1, 2026`, chapter:`Capital Moat`, sideLabel:`⚖ Confidential IPO Filing`,
+    title:`A Wall Street Capital Moat: Confidential IPO Filing`,
+    body:[
+      `Anthropic announced it had <strong>confidentially filed a draft registration statement (Form S-1)</strong> for an IPO with the SEC, with Morgan Stanley and Goldman Sachs as lead underwriters — shortly after closing its Series H at a roughly <strong>$965 billion</strong> valuation.`,
+      `The strategic aim: to counter Trump's "executive hijacking" with <strong>broad public ownership</strong>, using Wall Street to build an <span class="em-anth">"equity moat"</span> against government overreach.`
+    ],
+    tags:[`IPO`,`Form S-1`,`$965B`,`Equity Moat`,`Wall Street`],
+    sources:[`Anthropic files confidentially for IPO at $965B`,`Series H: $65 billion funding announcement`]
+  },
+  {
+    date:`Jun 2, 2026`, chapter:`Tech Filter`, sideLabel:`🏛 AI Cyber Clearinghouse`,
+    title:`The Government's Technology Filter`,
+    body:[
+      `Trump signed the executive order <strong>"Promoting Advanced Artificial Intelligence Innovation and Security,"</strong> with the <strong>Treasury</strong>, the <strong>NSA</strong>, and <strong>CISA</strong> jointly establishing an "AI cybersecurity clearinghouse."`,
+      `It means any flagship <strong>frontier model</strong> could first have to pass under the microscope of government technocrats for vulnerability review and coordination before release.`
+    ],
+    tags:[`Executive Order`,`Clearinghouse`,`Treasury`,`NSA`,`CISA`,`Frontier Review`],
+    sources:[`Executive order (official full text)`,`Legal analysis of the executive order`]
+  },
+  {
+    date:`Jun 5, 2026`, chapter:`Decisive Blow`, sideLabel:`🏛 NSPM-11`,
+    title:`NSPM-11 National Security Memorandum: Aimed at the Jugular`,
+    body:[
+      `Trump signed the historic <strong>National Security Presidential Memorandum 11 (NSPM-11)</strong>, establishing a mandatory framework for AI in the national-security enterprise and replacing the Biden-era NSM-25. Two clauses struck at Anthropic's core:`,
+      `① The <strong>"no-disable-or-modify" clause</strong>: without prior government approval, a commercial entity <span class="em-state">may not disable, degrade, or modify AI systems the U.S. military relies on</span> — legally stripping Anthropic of its last resort of using Terms of Service to stop the military from putting its models into autonomous weapons.`,
+      `② The <strong>"terminate non-cooperative contracts" clause</strong>: agencies must immediately end contracts with AI firms that "repeatedly restrict the government's lawful use of their technology."`,
+      `Trump then told reporters aboard <strong>Air Force One</strong> that the government was "actively evaluating" a proposal to <span class="em-state">take a direct equity stake in leading U.S. AI companies</span>.`
+    ],
+    tags:[`NSPM-11`,`No-Disable Clause`,`Contract Termination`,`ToS`,`Govt Equity`],
+    sources:[`NSPM-11 (official full text)`,`NSPM-11: never let a vendor pull the plug`,`Analysis: the memo removes AI guardrails`]
+  },
+  {
+    date:`Jun 12, 2026`, chapter:`Ultimate Ban`, sideLabel:`🏛 Global Ban`,
+    title:`The Ultimate Kill Switch: Fable 5 and Mythos Banned Worldwide`,
+    body:[
+      `Citing a "security jailbreak," the Trump administration issued an export-control directive suspending access to <strong>Fable 5</strong> and <strong>Mythos</strong> for all <strong>foreign nationals</strong> — including Anthropic's own foreign staff. Unable to verify users' nationality at scale, Anthropic effectively <strong>disabled its two most powerful models for all customers worldwide</strong>.`,
+      `The official rationale: the government claimed a competitor's tip showed a serious "jailbreak" flaw in Fable 5 that foreign adversaries could use to auto-generate <strong>zero-day exploit code</strong> against U.S. critical financial systems and infrastructure. Anthropic countered that the technique was "relatively simple, and other public models can discover it without any bypass."`
+    ],
+    callout:{text:`A "make-an-example" political signal: no matter how superior the technology or how vast the market cap, any firm that won't fall in line with NSPM-11's militarization track can have its commercial lifeline legally and completely severed by the state within hours.`, src:`— Commentary`},
+    tags:[`Fable 5`,`Mythos`,`Export Control`,`Jailbreak`,`Zero-day`,`Global Shutdown`],
+    sources:[`Exclusive: U.S. blocks foreign access to Anthropic's top models`,`Anthropic pulls top models after U.S. limits foreign access`,`Official statement on suspending Fable 5 / Mythos access`,`Anthropic disables Fable / Mythos under export controls`]
+  }
+];
+
 /* ====================== 渲染時間軸 ====================== */
 const tl = document.getElementById('timeline');
 const railEl = document.getElementById('rail');
 const allsrcEl = document.getElementById('allsrc');
 const seenSrc = new Map();
 
+// 雙語輸出：同時放入繁中(.lz)與英文(.le)，由 html[data-lang] + CSS 切換
+function bi(zh, en){ return `<span class="lz">${zh}</span><span class="le">${en==null?zh:en}</span>`; }
+
 EVENTS.forEach((e, i) => {
+  const en = EVENTS_EN[i] || {};
   const sideCls = (i % 2 === 0) ? 'right' : 'left'; // 交錯排列（手機自動單欄）
   const cvar = C[e.side];
   const ev = document.createElement('article');
@@ -642,28 +794,36 @@ EVENTS.forEach((e, i) => {
   ev.style.setProperty('--c', cvar);
   ev.id = `ev-${i}`;
 
-  const callout = e.callout ? (
-    e.callout.type === 'quote'
-      ? `<div class="callout quote">${e.callout.text}<span class="src">${e.callout.src}</span></div>`
-      : `<div class="callout spec"><b>💡 ${e.callout.label}</b>${e.callout.text}</div>`
-  ) : '';
+  let callout = '';
+  if(e.callout){
+    const ec = en.callout || {};
+    callout = e.callout.type === 'quote'
+      ? `<div class="callout quote">${bi(e.callout.text, ec.text)}<span class="src">${bi(e.callout.src, ec.src)}</span></div>`
+      : `<div class="callout spec"><b>💡 ${bi(e.callout.label, ec.label)}</b>${bi(e.callout.text, ec.text)}</div>`;
+  }
 
-  const tags = `<div class="tags">${e.tags.map(t=>`<span># ${t}</span>`).join('')}</div>`;
+  const enTags = en.tags || [];
+  const tags = `<div class="tags">${
+    e.tags.map(t=>`<span class="lz"># ${t}</span>`).join('') +
+    enTags.map(t=>`<span class="le"># ${t}</span>`).join('')
+  }</div>`;
 
-  const srcs = `<div class="sources"><div class="stitle">權威報導 / 官方文件</div><div class="src-list">${
-    e.sources.map(s=>`<a href="${s.u}" target="_blank" rel="noopener"><span class="pub">${s.pub}</span> ${s.t} <span class="arrow">↗</span></a>`).join('')
+  const srcs = `<div class="sources"><div class="stitle">${bi('權威報導 / 官方文件','Sources / Official Documents')}</div><div class="src-list">${
+    e.sources.map((s,k)=>`<a href="${s.u}" target="_blank" rel="noopener"><span class="pub">${s.pub}</span> ${bi(s.t, (en.sources&&en.sources[k]) || s.t)} <span class="arrow">↗</span></a>`).join('')
   }</div></div>`;
+
+  const bodyHtml = e.body.map((p,k)=>`<p>${bi(p, (en.body&&en.body[k]) || p)}</p>`).join('');
 
   ev.innerHTML = `
     <div class="node"></div>
     <div class="card">
       <div class="meta">
-        <span class="date">${e.date}</span>
-        <span class="side">${e.sideLabel}</span>
-        <span class="chapter">${e.chapter}</span>
+        <span class="date">${bi(e.date, en.date)}</span>
+        <span class="side">${bi(e.sideLabel, en.sideLabel)}</span>
+        <span class="chapter">${bi(e.chapter, en.chapter)}</span>
       </div>
-      <h3>${e.title}</h3>
-      ${e.body.map(p=>`<p>${p}</p>`).join('')}
+      <h3>${bi(e.title, en.title)}</h3>
+      ${bodyHtml}
       ${callout}
       ${tags}
       ${srcs}
@@ -673,18 +833,19 @@ EVENTS.forEach((e, i) => {
   // 右側章節導覽
   const btn = document.createElement('button');
   btn.style.setProperty('--c', cvar);
-  btn.innerHTML = `<span class="rlabel">${e.rail} · ${e.chapter}</span><span class="pip"></span>`;
+  btn.innerHTML = `<span class="rlabel">${e.rail} · ${bi(e.chapter, en.chapter)}</span><span class="pip"></span>`;
   btn.addEventListener('click', ()=> document.getElementById(`ev-${i}`).scrollIntoView({behavior:'smooth', block:'center'}));
   railEl.appendChild(btn);
 
   // 匯整所有來源（去重）
-  e.sources.forEach(s=>{ if(!seenSrc.has(s.u)) seenSrc.set(s.u, `${s.pub}｜${s.t}`); });
+  e.sources.forEach((s,k)=>{ if(!seenSrc.has(s.u)) seenSrc.set(s.u, {pub:s.pub, zh:s.t, en:(en.sources&&en.sources[k]) || s.t}); });
 });
 
-// Footer 全部來源
-[...seenSrc.entries()].forEach(([u, label])=>{
+// Footer 全部來源（雙語）
+[...seenSrc.entries()].forEach(([u, o])=>{
   const a = document.createElement('a');
-  a.href = u; a.target='_blank'; a.rel='noopener'; a.textContent = label;
+  a.href = u; a.target='_blank'; a.rel='noopener';
+  a.innerHTML = `<span class="lz">${o.pub}｜${o.zh}</span><span class="le">${o.pub} | ${o.en}</span>`;
   allsrcEl.appendChild(a);
 });
 
@@ -829,11 +990,11 @@ const snapCur  = document.getElementById('snapCur');
 
 // 逐頁清單：序章 → 導讀 → 各事件 → 結語 → 延伸閱讀
 const snapPages = [
-  {el:document.querySelector('.hero'),  label:'序章'},
-  {el:document.querySelector('.intro'), label:'導讀'},
-  ...events.map((el,i)=>({el, label:`事件 ${i+1} / ${EVENTS.length}`})),
-  {el:document.querySelector('.outro'), label:'結語'},
-  {el:document.querySelector('footer'), label:'延伸閱讀'}
+  {el:document.querySelector('.hero'),  label:{zh:'序章', en:'Intro'}},
+  {el:document.querySelector('.intro'), label:{zh:'導讀', en:'Overview'}},
+  ...events.map((el,i)=>({el, label:{zh:`事件 ${i+1} / ${EVENTS.length}`, en:`Event ${i+1} / ${EVENTS.length}`}})),
+  {el:document.querySelector('.outro'), label:{zh:'結語', en:'Closing'}},
+  {el:document.querySelector('footer'), label:{zh:'延伸閱讀', en:'Sources'}}
 ];
 let snapIdx = 0;
 
@@ -865,7 +1026,7 @@ function updateSnapCounter(){
     if(d < bd){ bd = d; best = idx; }
   });
   snapIdx = best;
-  snapCur.textContent = snapPages[best].label;
+  snapCur.textContent = snapPages[best].label[ root.getAttribute('data-lang') === 'en' ? 'en' : 'zh' ];
   snapPrev.disabled = (best === 0);
   snapNext.disabled = (best === snapPages.length-1);
 }
@@ -890,6 +1051,24 @@ window.addEventListener('scroll', ()=> requestAnimationFrame(updateSnapCounter),
 let savedMode = 'scroll';
 try{ savedMode = localStorage.getItem('avt-mode') || 'scroll'; }catch(e){}
 if(savedMode === 'snap'){ applyMode(true, false); requestAnimationFrame(updateSnapCounter); }
+
+/* ====================== 繁/英 雙語切換 ====================== */
+const langBtns = [...document.querySelectorAll('.langswitch button')];
+function applyLang(lang){
+  root.setAttribute('data-lang', lang);
+  root.lang = (lang === 'en' ? 'en' : 'zh-Hant');
+  langBtns.forEach(b=> b.classList.toggle('active', b.dataset.lang === lang));
+  document.title = (lang === 'en'
+    ? 'State Power vs. The AI Charter — A Dossier of Anthropic vs. the Trump Administration (2025–2026)'
+    : '國家機器 vs. AI 憲章 — Anthropic 與川普政府的全面對抗事件簿（2025–2026）');
+  try{ localStorage.setItem('avt-lang', lang); }catch(e){}
+  updateSnapCounter();
+  onScroll();   // 語言切換後字數改變 → 重算作用中事件與軸線
+}
+langBtns.forEach(b=> b.addEventListener('click', ()=> applyLang(b.dataset.lang)));
+let savedLang = 'zh';
+try{ savedLang = localStorage.getItem('avt-lang') || 'zh'; }catch(e){}
+applyLang(savedLang);
 </script>
 </body>
 </html>
