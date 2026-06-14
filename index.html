@@ -96,6 +96,9 @@
   /* 人像背景：縮小完整呈現，避免臉部被裁切 */
   .bglayer.portrait{background-size:auto 88%; background-repeat:no-repeat; background-position:center}
   .bglayer.portrait.active{animation:kenburns-soft 22s ease-out forwards}
+  /* 並列合成圖（如事件 8 結盟圖）：完整呈現兩人，不裁切 */
+  .bglayer.fit{background-size:contain; background-repeat:no-repeat; background-position:center}
+  .bglayer.fit.active{animation:kenburns-soft 22s ease-out forwards}
   @keyframes kenburns-soft{from{transform:scale(1.0)} to{transform:scale(1.05)}}
   #bgveil{position:absolute; inset:0; opacity:0; transition:opacity 1.15s ease;
     background:
@@ -663,7 +666,7 @@ const EVENT_IMAGES = [
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Phillip_Burton_Federal_Building_%26_United_States_Courthouse.jpg/1920px-Phillip_Burton_Federal_Building_%26_United_States_Courthouse.jpg'}, // 舊金山聯邦法院
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Code_on_computer_monitor_%28Unsplash%29.jpg/1920px-Code_on_computer_monitor_%28Unsplash%29.jpg'},                                // 程式碼螢幕
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/E._Barrett_Prettyman_Courthouse_from_NGA_East_Building.jpg/1920px-E._Barrett_Prettyman_Courthouse_from_NGA_East_Building.jpg'},  // 華府 DC 上訴法院
-  {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Pope_Leo_XIV_3_%283x4_cropped%29.png/1920px-Pope_Leo_XIV_3_%283x4_cropped%29.png', portrait:true},                                 // 教宗李奧十四世
+  {src:'event8-alliance.jpg', fit:true},                                                                                          // Dario Amodei × 教宗李奧十四世（結盟並列）
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/New_York_Stock_Exchange_Facade_2015.jpg/1920px-New_York_Stock_Exchange_Facade_2015.jpg'},                                       // 紐約證交所
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/View_of_Oval_Office_in_2017.jpg/1920px-View_of_Oval_Office_in_2017.jpg'},                                                       // 橢圓辦公室
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/United_States_Air_Force_Boeing_VC-25_%2892-9000%29_landing_at_Dayton_International_Airport_%281%29.jpg/1920px-United_States_Air_Force_Boeing_VC-25_%2892-9000%29_landing_at_Dayton_International_Airport_%281%29.jpg'}, // 空軍一號
@@ -676,6 +679,7 @@ const bgLayers = EVENTS.map((e,i)=>{
   const L = document.createElement('div');
   L.className = 'bglayer';
   if(img.portrait) L.classList.add('portrait');
+  if(img.fit) L.classList.add('fit');
   if(img.src) L.style.backgroundImage = `url("${img.src}")`;
   if(img.pos) L.style.backgroundPosition = img.pos;
   bgLayersWrap.appendChild(L);
