@@ -117,7 +117,7 @@
   #bglayers{position:absolute; inset:0}
   .bglayer{position:absolute; inset:0; background-size:cover; background-position:center;
     opacity:0; transform:scale(1.06); transition:opacity 1.15s ease; will-change:opacity, transform;
-    filter:brightness(1.12) saturate(1.06) contrast(1.02)}
+    filter:brightness(1.20) saturate(1.08) contrast(1.02)}
   .bglayer.active{opacity:1; animation:kenburns 20s ease-out forwards}
   @keyframes kenburns{from{transform:scale(1.06)} to{transform:scale(1.17)}}
   /* 人像背景：縮小完整呈現，避免臉部被裁切 */
@@ -129,8 +129,8 @@
   @keyframes kenburns-soft{from{transform:scale(1.0)} to{transform:scale(1.05)}}
   #bgveil{position:absolute; inset:0; opacity:0; transition:opacity 1.15s ease;
     background:
-      radial-gradient(125% 85% at 50% 32%, rgba(7,7,11,.26), rgba(7,7,11,.78) 80%),
-      linear-gradient(180deg, rgba(7,7,11,.72) 0%, rgba(7,7,11,.44) 36%, rgba(7,7,11,.50) 64%, rgba(7,7,11,.84) 100%);}
+      radial-gradient(125% 85% at 50% 32%, rgba(7,7,11,.16), rgba(7,7,11,.66) 80%),
+      linear-gradient(180deg, rgba(7,7,11,.60) 0%, rgba(7,7,11,.32) 36%, rgba(7,7,11,.38) 64%, rgba(7,7,11,.72) 100%);}
   #bgstage.has-image #bgveil{opacity:1}
 
   /* ---------- 頂部進度與權力天平 ---------- */
