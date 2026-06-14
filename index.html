@@ -159,7 +159,7 @@
   .rail button.active .rlabel{opacity:1; transform:translateX(0); color:var(--ink)}
 
   /* ---------- HERO ---------- */
-  .hero{position:relative; z-index:2; min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:90px 22px 60px; overflow:hidden}
+  .hero{position:relative; z-index:2; min-height:100vh; min-height:100svh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:90px 22px 60px; overflow:hidden}
   .hero .glowA,.hero .glowB{position:absolute; border-radius:50%; filter:blur(80px); opacity:.5; z-index:-1}
   .hero .glowA{width:520px; height:520px; background:radial-gradient(circle,rgba(230,59,78,.5),transparent 70%); top:6%; left:8%}
   .hero .glowB{width:560px; height:560px; background:radial-gradient(circle,rgba(217,119,87,.45),transparent 70%); bottom:2%; right:6%}
@@ -290,15 +290,15 @@
   html.snap-mode{scroll-snap-type:y mandatory; overscroll-behavior:none; scrollbar-width:none; -ms-overflow-style:none}
   html.snap-mode::-webkit-scrollbar{width:0; height:0; display:none}
   html.snap-mode .hero{scroll-snap-align:start; scroll-snap-stop:always}
-  html.snap-mode .intro{min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; justify-content:center; margin:0 auto; scroll-snap-align:start; scroll-snap-stop:always}
+  html.snap-mode .intro{min-height:100vh; min-height:100svh; display:flex; flex-direction:column; justify-content:center; margin:0 auto; scroll-snap-align:start; scroll-snap-stop:always}
   html.snap-mode .timeline{max-width:100%; margin-top:0; padding:0}
   html.snap-mode .timeline .spine{display:none}
-  html.snap-mode .event{width:100%; left:0 !important; min-height:100vh; min-height:100dvh; padding:64px 20px 78px; display:flex; align-items:center; justify-content:center; opacity:1 !important; transform:none !important; transition:none; scroll-snap-align:start; scroll-snap-stop:always}
+  html.snap-mode .event{width:100%; left:0 !important; min-height:100vh; min-height:100svh; padding:64px 20px 78px; display:flex; align-items:center; justify-content:center; opacity:1 !important; transform:none !important; transition:none; scroll-snap-align:start; scroll-snap-stop:always}
   html.snap-mode .event .node{display:none}
-  html.snap-mode .event .card{max-width:780px; width:100%; max-height:calc(100vh - 142px); max-height:calc(100dvh - 142px);
+  html.snap-mode .event .card{max-width:780px; width:100%; max-height:calc(100vh - 142px); max-height:calc(100svh - 142px);
     overflow-y:auto; overflow-x:hidden; scrollbar-width:none; -ms-overflow-style:none}
   html.snap-mode .event .card::-webkit-scrollbar{width:0; height:0; display:none}
-  html.snap-mode .outro{min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; justify-content:center; scroll-snap-align:start; scroll-snap-stop:always}
+  html.snap-mode .outro{min-height:100vh; min-height:100svh; display:flex; flex-direction:column; justify-content:center; scroll-snap-align:start; scroll-snap-stop:always}
   html.snap-mode footer{scroll-snap-align:start; scroll-snap-stop:always}
 
   /* 逐頁模式：壓縮版面，盡量讓單一事件一頁裝得下 */
@@ -333,7 +333,11 @@
     .modeswitch{top:9px; left:9px; padding:2px}
     .modeswitch button{padding:6px 9px; font-size:10px}
     html.snap-mode .event{padding:58px 12px 74px}
-    html.snap-mode .event .card{max-height:calc(100vh - 128px); max-height:calc(100dvh - 128px)}
+    html.snap-mode .event .card{max-height:calc(100vh - 128px); max-height:calc(100svh - 128px)}
+  }
+  /* 觸控裝置（手機/平板）：改用 proximity，避免 iOS 動態工具列在頁尾與 mandatory 強制吸附相剋而上下抖動；桌機維持 mandatory 俐落逐頁 */
+  @media (pointer:coarse){
+    html.snap-mode{scroll-snap-type:y proximity}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
