@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://austin-liang.github.io/ai-charter-vs-state/sitemap.xml
