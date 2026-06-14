@@ -1,0 +1,8 @@
+# Claude Code 工作目錄（不公開）
+.claude/
+
+# 原始事件簿來源文件（不公開）
+doc/
+
+# 原始命名版本（repo 以 index.html 為準）
+anthropic_vs_trump_2026.html
