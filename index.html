@@ -86,11 +86,12 @@
   }
 
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%; text-size-adjust:100%}
   body{
     margin:0; background:var(--bg); color:var(--ink);
     font-family:var(--sans); font-weight:400; line-height:1.8;
     -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    -webkit-tap-highlight-color:transparent;
   }
   body::before{ /* 背景紋理：細網格 + 雜訊感 */
     content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
@@ -105,6 +106,7 @@
     background-image:linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
                      linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
     background-size:48px 48px;
+    -webkit-mask-image:radial-gradient(circle at 50% 40%, #000 0%, transparent 80%);
     mask-image:radial-gradient(circle at 50% 40%, #000 0%, transparent 80%);
   }
   a{color:inherit}
@@ -149,7 +151,7 @@
 
   /* ---------- 章節側欄（右） ---------- */
   .rail{position:fixed; right:18px; top:50%; transform:translateY(-50%); z-index:55; display:flex; flex-direction:column; gap:13px; pointer-events:auto}
-  .rail button{appearance:none; border:0; background:transparent; cursor:pointer; padding:0; display:flex; align-items:center; gap:9px; justify-content:flex-end; color:var(--muted)}
+  .rail button{-webkit-appearance:none; appearance:none; border:0; background:transparent; cursor:pointer; padding:0; display:flex; align-items:center; gap:9px; justify-content:flex-end; color:var(--muted)}
   .rail .pip{width:9px; height:9px; border-radius:50%; background:rgba(180,175,170,.28); transition:all .35s ease; flex:none}
   .rail .rlabel{font-family:var(--mono); font-size:10px; opacity:0; transform:translateX(6px); transition:all .3s ease; white-space:nowrap}
   .rail button:hover .rlabel{opacity:.9; transform:translateX(0)}
@@ -157,7 +159,7 @@
   .rail button.active .rlabel{opacity:1; transform:translateX(0); color:var(--ink)}
 
   /* ---------- HERO ---------- */
-  .hero{position:relative; z-index:2; min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:90px 22px 60px; overflow:hidden}
+  .hero{position:relative; z-index:2; min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:90px 22px 60px; overflow:hidden}
   .hero .glowA,.hero .glowB{position:absolute; border-radius:50%; filter:blur(80px); opacity:.5; z-index:-1}
   .hero .glowA{width:520px; height:520px; background:radial-gradient(circle,rgba(230,59,78,.5),transparent 70%); top:6%; left:8%}
   .hero .glowB{width:560px; height:560px; background:radial-gradient(circle,rgba(217,119,87,.45),transparent 70%); bottom:2%; right:6%}
@@ -218,7 +220,7 @@
 
   .card .meta{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px}
   .card .date{font-family:var(--mono); font-weight:700; font-size:15px; color:var(--ink); letter-spacing:.02em}
-  .card .side{font-size:11px; font-family:var(--mono); letter-spacing:.06em; padding:3px 9px; border-radius:999px; color:var(--c); border:1px solid color-mix(in srgb, var(--c) 40%, transparent); background:color-mix(in srgb, var(--c) 10%, transparent)}
+  .card .side{font-size:11px; font-family:var(--mono); letter-spacing:.06em; padding:3px 9px; border-radius:999px; color:var(--c); border:1px solid var(--c); border:1px solid color-mix(in srgb, var(--c) 40%, transparent); background:rgba(255,255,255,.05); background:color-mix(in srgb, var(--c) 10%, transparent)}
   .card .chapter{margin-left:auto; font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)}
   .card h3{font-family:var(--serif); font-weight:700; font-size:21px; line-height:1.4; margin:2px 0 12px}
   .card p{font-size:15px; color:var(--ink-dim); margin:0 0 12px}
@@ -271,32 +273,32 @@
 
   /* ---------- 閱讀模式切換 ---------- */
   .modeswitch{position:fixed; top:14px; left:16px; z-index:62; display:flex; gap:2px; padding:3px; border-radius:999px; background:rgba(16,17,26,.82); border:1px solid var(--line-dim); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px)}
-  .modeswitch button{appearance:none; border:0; cursor:pointer; font-family:var(--sans); font-size:11.5px; letter-spacing:.03em; color:var(--muted); background:transparent; padding:7px 13px; border-radius:999px; transition:.25s}
-  .modeswitch button.active{color:#fff; background:linear-gradient(180deg, color-mix(in srgb,var(--anthropic) 72%, #000), color-mix(in srgb,var(--anthropic) 42%, #000)); box-shadow:0 4px 14px -6px var(--anthropic)}
+  .modeswitch button{-webkit-appearance:none; appearance:none; border:0; cursor:pointer; font-family:var(--sans); font-size:11.5px; letter-spacing:.03em; color:var(--muted); background:transparent; padding:7px 13px; border-radius:999px; transition:.25s}
+  .modeswitch button.active{color:#fff; background:var(--anthropic); background:linear-gradient(180deg, color-mix(in srgb,var(--anthropic) 72%, #000), color-mix(in srgb,var(--anthropic) 42%, #000)); box-shadow:0 4px 14px -6px var(--anthropic)}
   .modeswitch button:hover:not(.active){color:var(--ink)}
 
   /* ---------- 逐頁導覽（僅 snap 模式顯示） ---------- */
   .snapnav{display:none}
   html.snap-mode .snapnav{position:fixed; bottom:20px; left:50%; transform:translateX(-50%); z-index:62; display:flex; align-items:center; gap:14px; padding:7px 9px; border-radius:999px; background:rgba(16,17,26,.86); border:1px solid var(--line-dim); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); font-family:var(--mono); font-size:12px; color:var(--ink-dim); box-shadow:0 14px 40px -18px #000}
-  .snapnav button{appearance:none; border:1px solid var(--line-dim); background:transparent; color:var(--ink); width:30px; height:30px; border-radius:50%; cursor:pointer; font-size:11px; transition:.2s; display:flex; align-items:center; justify-content:center}
+  .snapnav button{-webkit-appearance:none; appearance:none; border:1px solid var(--line-dim); background:transparent; color:var(--ink); width:30px; height:30px; border-radius:50%; cursor:pointer; font-size:11px; transition:.2s; display:flex; align-items:center; justify-content:center}
   .snapnav button:hover:not(:disabled){border-color:var(--anthropic); color:var(--anthropic-2); box-shadow:0 0 14px -4px var(--anthropic)}
   .snapnav button:disabled{opacity:.3; cursor:default}
   .snapnav .snapcount{min-width:96px; text-align:center; letter-spacing:.06em}
   .snapnav .snapcount b{color:var(--anthropic-2); font-weight:700}
 
   /* ---------- Snap：逐頁全螢幕模式 ---------- */
-  html.snap-mode{scroll-snap-type:y mandatory; scrollbar-width:none; -ms-overflow-style:none}
+  html.snap-mode{scroll-snap-type:y mandatory; overscroll-behavior:none; scrollbar-width:none; -ms-overflow-style:none}
   html.snap-mode::-webkit-scrollbar{width:0; height:0; display:none}
   html.snap-mode .hero{scroll-snap-align:start; scroll-snap-stop:always}
-  html.snap-mode .intro{min-height:100vh; display:flex; flex-direction:column; justify-content:center; margin:0 auto; scroll-snap-align:start; scroll-snap-stop:always}
+  html.snap-mode .intro{min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; justify-content:center; margin:0 auto; scroll-snap-align:start; scroll-snap-stop:always}
   html.snap-mode .timeline{max-width:100%; margin-top:0; padding:0}
   html.snap-mode .timeline .spine{display:none}
-  html.snap-mode .event{width:100%; left:0 !important; min-height:100vh; padding:64px 20px 78px; display:flex; align-items:center; justify-content:center; opacity:1 !important; transform:none !important; transition:none; scroll-snap-align:start; scroll-snap-stop:always}
+  html.snap-mode .event{width:100%; left:0 !important; min-height:100vh; min-height:100dvh; padding:64px 20px 78px; display:flex; align-items:center; justify-content:center; opacity:1 !important; transform:none !important; transition:none; scroll-snap-align:start; scroll-snap-stop:always}
   html.snap-mode .event .node{display:none}
-  html.snap-mode .event .card{max-width:780px; width:100%; max-height:calc(100vh - 142px);
+  html.snap-mode .event .card{max-width:780px; width:100%; max-height:calc(100vh - 142px); max-height:calc(100dvh - 142px);
     overflow-y:auto; overflow-x:hidden; scrollbar-width:none; -ms-overflow-style:none}
   html.snap-mode .event .card::-webkit-scrollbar{width:0; height:0; display:none}
-  html.snap-mode .outro{min-height:100vh; display:flex; flex-direction:column; justify-content:center; scroll-snap-align:start; scroll-snap-stop:always}
+  html.snap-mode .outro{min-height:100vh; min-height:100dvh; display:flex; flex-direction:column; justify-content:center; scroll-snap-align:start; scroll-snap-stop:always}
   html.snap-mode footer{scroll-snap-align:start; scroll-snap-stop:always}
 
   /* 逐頁模式：壓縮版面，盡量讓單一事件一頁裝得下 */
@@ -331,7 +333,7 @@
     .modeswitch{top:9px; left:9px; padding:2px}
     .modeswitch button{padding:6px 9px; font-size:10px}
     html.snap-mode .event{padding:58px 12px 74px}
-    html.snap-mode .event .card{max-height:calc(100vh - 128px)}
+    html.snap-mode .event .card{max-height:calc(100vh - 128px); max-height:calc(100dvh - 128px)}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
