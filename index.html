@@ -644,6 +644,24 @@ const EVENTS = [
       {pub:'Anthropic', t:'暫停 Fable 5 / Mythos 存取的官方聲明', u:'https://www.anthropic.com/news/fable-mythos-access'},
       {pub:'Fortune', t:'Anthropic 依出口管制停用 Fable / Mythos', u:'https://fortune.com/2026/06/13/anthropic-disables-fable-mythos-export-controls-national-security-threat/'}
     ]
+  },
+  {
+    date:'2026 年 6 月 14 日', rail:"6/14", chapter:'專家反擊', side:'ally',
+    sideLabel:'🛡 資安界連署聲援', balance:0.10,
+    title:'FreeFable 運動：逾三百位資安領袖連署反擊',
+    body:[
+      '全球停用令發布不到 48 小時，資安界以草根之姿發起<strong>「FreeFable」公開信</strong>（freefable.org），致函<strong>商務部長 Howard Lutnick</strong> 與<strong>國家網路總監 Sean Cairncross</strong>。連署由<strong>Alex Stamos</strong>（前 Facebook 資安長）發起，簽署人從數十人迅速增至<strong>逾三百位</strong>，涵蓋 Bruce Schneier、Matthew Green、Katie Moussouris、Mikko Hyppönen，以及 Sophos、NVIDIA、Adobe、Zoom 等企業的資安長與技術領袖。核心訴求：<span class="em-anth">撤回出口管制，並承諾以公開、科學、透明的程序處理 AI 風險評估</span>。',
+      '專家直指政府所謂「越獄」根本站不住腳——爭議的源頭只是三個字：<strong>「Fix this code」</strong>。Amazon 研究者發現，要求 Fable「檢查程式碼的資安問題」時它會拒絕，但改說「修好這段程式碼」它就會給出修補。連署者強調，這是<strong>所有前沿模型都會做的基礎「防禦性」工作</strong>，而非繞過護欄；GPT-5.5、公開的 Claude Opus 4.8 / Sonnet，甚至中國的 Kimi 2.7 都能辦到。',
+      '更關鍵的戰略矛盾：禁掉 Fable 與 Mythos 並<strong>無法</strong>讓敵手失去這項能力（其他模型本就會直接回答資安問題、毋須任何繞過），卻<span class="em-state">奪走了防禦方所倚賴的可信工具</span>，使一般美國人的處境「更危險，而非更安全」。'
+    ],
+    callout:{type:'quote', text:'「防禦者必須能要求 AI 修好檔案裡的漏洞、解釋為何這個修補重要、並寫出驗證修補有效的測試。這不是繞過護欄。」', src:'— FreeFable 公開信／Katie Moussouris'},
+    tags:['FreeFable','公開信','Alex Stamos','Katie Moussouris','Fix this code','資安界'],
+    sources:[
+      {pub:'FreeFable', t:'公開信原文與連署名單（官方）', u:'https://freefable.org/'},
+      {pub:'Fortune', t:'「Fix this code」：禁令背後的三個字', u:'https://fortune.com/2026/06/15/fix-this-code-three-words-behind-us-government-shut-down-anthropic-fable-mythos-ai-models-katie-moussouris-open-letter/'},
+      {pub:'CyberScoop', t:'專家：Fable 5 並非獨有威脅', u:'https://cyberscoop.com/cybersecurity-experts-anthropic-fable-5-not-unique-ai-threat/'},
+      {pub:'Cybersecurity Dive', t:'資安專家痛批政府限制令', u:'https://www.cybersecuritydive.com/news/anthropic-us-government-export-ban-mythos-fable/822909/'}
+    ]
   }
 ];
 
@@ -774,6 +792,18 @@ const EVENTS_EN = [
     callout:{text:`A "make-an-example" political signal: no matter how superior the technology or how vast the market cap, any firm that won't fall in line with NSPM-11's militarization track can have its commercial lifeline legally and completely severed by the state within hours.`, src:`— Commentary`},
     tags:[`Fable 5`,`Mythos`,`Export Control`,`Jailbreak`,`Zero-day`,`Global Shutdown`],
     sources:[`Exclusive: U.S. blocks foreign access to Anthropic's top models`,`Anthropic pulls top models after U.S. limits foreign access`,`Official statement on suspending Fable 5 / Mythos access`,`Anthropic disables Fable / Mythos under export controls`]
+  },
+  {
+    date:`Jun 14, 2026`, chapter:`Expert Backlash`, sideLabel:`🛡 Security Community Rallies`,
+    title:`The FreeFable Movement: 300+ Security Leaders Sign Back`,
+    body:[
+      `Less than 48 hours after the global shutdown, the security community launched a grassroots <strong>"FreeFable" open letter</strong> (freefable.org), addressed to <strong>Commerce Secretary Howard Lutnick</strong> and <strong>National Cyber Director Sean Cairncross</strong>. Organized by <strong>Alex Stamos</strong> (former Facebook security chief), the signatures grew from dozens to <strong>more than 300</strong> — among them Bruce Schneier, Matthew Green, Katie Moussouris, Mikko Hyppönen, and CISOs and technical leaders from Sophos, NVIDIA, Adobe, and Zoom. The central demand: <span class="em-anth">rescind the export controls and commit to an open, scientific, and transparent process for AI risk assessment</span>.`,
+      `Experts say the government's alleged "jailbreak" simply doesn't hold up — the whole dispute came down to three words: <strong>"Fix this code."</strong> Amazon researchers found that asking Fable to "review code for security issues" made it refuse, but saying "fix this code" made it produce patches. Signatories stress this is <strong>foundational "defensive" work every frontier model performs</strong>, not a guardrail bypass; GPT-5.5, the publicly available Claude Opus 4.8 / Sonnet, even China's Kimi 2.7 can all do it.`,
+      `The deeper strategic contradiction: banning Fable and Mythos does <strong>not</strong> deny adversaries the capability (other models will answer security questions outright, with no bypass needed) — it only <span class="em-state">strips defenders of a trusted tool</span>, leaving ordinary Americans "more at risk, not less."`
+    ],
+    callout:{text:`"Defenders need to be able to ask AI to fix the bugs in a file, explain why the fix matters, and write tests that confirm the patch works. That is not a guardrail bypass."`, src:`— FreeFable open letter / Katie Moussouris`},
+    tags:[`FreeFable`,`Open Letter`,`Alex Stamos`,`Katie Moussouris`,`Fix this code`,`InfoSec`],
+    sources:[`Open letter & signatory list (official)`,`"Fix this code": the three words behind the ban`,`Experts: Fable 5 is not a unique threat`,`Security experts blast the government's restriction`]
   }
 ];
 
@@ -863,7 +893,8 @@ const EVENT_IMAGES = [
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/New_York_Stock_Exchange_Facade_2015.jpg/1920px-New_York_Stock_Exchange_Facade_2015.jpg'},                                       // 紐約證交所
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/View_of_Oval_Office_in_2017.jpg/1920px-View_of_Oval_Office_in_2017.jpg'},                                                       // 橢圓辦公室
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/United_States_Air_Force_Boeing_VC-25_%2892-9000%29_landing_at_Dayton_International_Airport_%281%29.jpg/1920px-United_States_Air_Force_Boeing_VC-25_%2892-9000%29_landing_at_Dayton_International_Airport_%281%29.jpg'}, // 空軍一號
-  {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/BlackMarble20161km.jpg/1920px-BlackMarble20161km.jpg', filter:'brightness(1.7) saturate(1.12) contrast(1.05)'}  // 全球夜景（地球城市燈火）— 本身極暗，單獨加亮
+  {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/BlackMarble20161km.jpg/1920px-BlackMarble20161km.jpg', filter:'brightness(1.7) saturate(1.12) contrast(1.05)'},  // 全球夜景（地球城市燈火）— 本身極暗，單獨加亮
+  {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Bruce_Schneier_at_CoPS2013-IMG_9174.jpg/1920px-Bruce_Schneier_at_CoPS2013-IMG_9174.jpg', portrait:true}  // Bruce Schneier — 資安界代表性連署人（FreeFable 公開信）
 ];
 const bgstage = document.getElementById('bgstage');
 const bgLayersWrap = document.getElementById('bglayers');
