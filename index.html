@@ -125,6 +125,13 @@
   /* 人像背景：縮小完整呈現，避免臉部被裁切 */
   .bglayer.portrait{background-size:auto 88%; background-repeat:no-repeat; background-position:center}
   .bglayer.portrait.active{animation:kenburns-soft 22s ease-out forwards}
+  /* 閱讀對稱：連續捲動・桌機下，人像背景移到事件卡牌的「對側」半邊，主體不被卡牌遮擋。
+     卡牌左右由事件索引交錯（偶→卡牌在右、奇→卡牌在左）；img-left/right 由 JS 依此加上。
+     逐頁全螢幕(snap)與行動裝置則維持置中（見下方覆寫）。全頁式背景（如事件 1）不帶 portrait，不受影響。 */
+  .bglayer.portrait.img-left{background-position:10% center}   /* 卡牌在右 → 圖偏左 */
+  .bglayer.portrait.img-right{background-position:90% center}  /* 卡牌在左 → 圖偏右 */
+  html.snap-mode .bglayer.portrait.img-left,
+  html.snap-mode .bglayer.portrait.img-right{background-position:center}
   /* 並列合成圖（如事件 8 結盟圖）：完整呈現兩人，不裁切 */
   .bglayer.fit{background-size:contain; background-repeat:no-repeat; background-position:center}
   .bglayer.fit.active{animation:kenburns-soft 22s ease-out forwards}
@@ -339,6 +346,9 @@
     .event.visible{transform:translateX(0)}
     .event .node{left:9px !important; right:auto !important}
     .event .card::before{left:-1px !important; right:auto !important}
+    /* 行動裝置：人像背景回復置中（單欄版面，不做左右對稱位移） */
+    .bglayer.portrait.img-left,
+    .bglayer.portrait.img-right{background-position:center}
     .card .chapter{margin-left:0}
     .allsrc{columns:1}
     .modeswitch{top:9px; left:9px; padding:2px}
@@ -902,7 +912,11 @@ const bgLayers = EVENTS.map((e,i)=>{
   const img = EVENT_IMAGES[i] || {};
   const L = document.createElement('div');
   L.className = 'bglayer';
-  if(img.portrait) L.classList.add('portrait');
+  if(img.portrait){
+    L.classList.add('portrait');
+    // 卡牌左右與事件索引交錯一致（偶→卡牌在右、奇→卡牌在左）；圖置於卡牌對側半邊
+    L.classList.add((i % 2 === 0) ? 'img-left' : 'img-right');
+  }
   if(img.fit) L.classList.add('fit');
   if(img.src) L.style.backgroundImage = `url("${img.src}")`;
   if(img.pos) L.style.backgroundPosition = img.pos;
