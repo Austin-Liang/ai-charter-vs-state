@@ -341,9 +341,13 @@
     .timeline{padding-left:8px; padding-right:8px}
     .timeline .spine{left:18px}
     .timeline .spine .fill{left:0}
-    .event{width:100%; left:0 !important; padding:18px 8px 18px 44px; transform:translateX(34px)}
-    .event.left,.event.right{left:0}
-    .event.visible{transform:translateX(0)}
+    /* 行動裝置入場動畫改「垂直上滑」：原本桌機的 .event.left/.right 水平位移（translateX ±44px）
+       因兩段 class 選擇器特異性較高，會壓過此處的 .event 規則，導致未進場的卡片往右側溢位 ~44px，
+       撐寬版面視窗→把固定在 right 的語言切換鈕推出畫面右緣（左側 modeswitch 不受影響）。
+       改為 translateY 後完全無水平溢位，且單欄版面上滑動畫更自然。 */
+    .event{width:100%; left:0 !important; padding:18px 8px 18px 44px}
+    .event.left,.event.right{left:0; transform:translateY(22px)}
+    .event.visible{transform:translateY(0)}
     .event .node{left:9px !important; right:auto !important}
     .event .card::before{left:-1px !important; right:auto !important}
     /* 行動裝置：人像背景回復置中（單欄版面，不做左右對稱位移） */
