@@ -374,8 +374,13 @@
       background:linear-gradient(180deg, rgba(20,21,33,.975), rgba(13,14,22,.975));
     }
     /* 不再永久 GPU 提升 13 張全螢幕固定背景層（已啟用的層會累積佔用顯存，
-       是「越捲越糟」的主因）；僅在 .active 淡入淡出/縮放時即時合成即可。 */
+       是「越捲越糟」的主因）；僅在 .active 淡入淡出時即時合成即可。 */
     .bglayer{will-change:auto}
+    /* 停掉 Ken-Burns 連續縮放：固定背景不再每幀重繪，徹底消除固定背景在
+       捲動下的合成壓力（保留 opacity 淡入淡出，靜止停在 scale(1.06)，視覺幾乎不變）。 */
+    .bglayer.active,
+    .bglayer.portrait.active,
+    .bglayer.fit.active{animation:none}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
