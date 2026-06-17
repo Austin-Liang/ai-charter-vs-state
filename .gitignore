@@ -10,7 +10,6 @@ og-card.html
 # 建置用暫存（favicon 渲染原始檔與母圖，只發布成品 favicon.* / apple-touch-icon.png）
 favicon-render.html
 favicon-512.png
-_preview32.png
 
 # 合成素材（事件 8 結盟圖只發布成品 event8-alliance.jpg）
 pope_src.png
