@@ -361,6 +361,21 @@
   /* 觸控裝置（手機/平板）：改用 proximity，避免 iOS 動態工具列在頁尾與 mandatory 強制吸附相剋而上下抖動；桌機維持 mandatory 俐落逐頁 */
   @media (pointer:coarse){
     html.snap-mode{scroll-snap-type:y proximity}
+
+    /* === 捲動破圖根治（手機/平板） ===
+       症狀：越往下捲動，卡片附近越常出現一塊塊硬邊模糊矩形、背景被切成重複色塊。
+       根因：卡片的毛玻璃 backdrop-filter 在捲動時，必須即時對「固定式 #bgstage
+       ＋每層 filter ＋緩慢縮放(Ken-Burns)」的背景做 backdrop 取樣；Chrome/Android
+       的合成器會快取這份模糊貼圖，捲動時貼圖位置/內容失準 → 殘留鬼影矩形。
+       與手機效能無關（高解析螢幕反而讓每張全螢幕貼圖更大、更快觸頂）。
+       卡片底色本已近不透明(≈.88–.90)，毛玻璃幾乎看不見，故觸控裝置直接移除、改純色底即根治；桌機毛玻璃不受影響。 */
+    .card{
+      -webkit-backdrop-filter:none; backdrop-filter:none;
+      background:linear-gradient(180deg, rgba(20,21,33,.975), rgba(13,14,22,.975));
+    }
+    /* 不再永久 GPU 提升 13 張全螢幕固定背景層（已啟用的層會累積佔用顯存，
+       是「越捲越糟」的主因）；僅在 .active 淡入淡出/縮放時即時合成即可。 */
+    .bglayer{will-change:auto}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
