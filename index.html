@@ -25,7 +25,7 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://austin-liang.github.io/ai-charter-vs-state/">
 <meta property="og:title" content="國家機器 vs. AI 憲章 — Anthropic 與川普政府的全面對抗事件簿（2025–2026）">
-<meta property="og:description" content="從軍事化導火線到全球禁用令：一場國家隱形之手與 AI 安全憲章的全面戰爭。沉浸式互動時間軸，18 個關鍵事件、權威報導引用、可逐頁全螢幕閱讀。 | From the militarization flashpoint to a global ban: the total war between the state and an AI 'safety charter.' An immersive interactive timeline — 18 key events, cited reporting, and a fullscreen page-by-page mode. (Traditional Chinese / English)">
+<meta property="og:description" content="從軍事化導火線到全球禁用令：一場國家隱形之手與 AI 安全憲章的全面戰爭。沉浸式互動時間軸，19 個關鍵事件、權威報導引用、可逐頁全螢幕閱讀。 | From the militarization flashpoint to a global ban: the total war between the state and an AI 'safety charter.' An immersive interactive timeline — 19 key events, cited reporting, and a fullscreen page-by-page mode. (Traditional Chinese / English)">
 <meta property="og:image" content="https://austin-liang.github.io/ai-charter-vs-state/og-cover.png">
 <meta property="og:image:secure_url" content="https://austin-liang.github.io/ai-charter-vs-state/og-cover.png">
 <meta property="og:image:type" content="image/png">
@@ -47,7 +47,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "國家機器 vs. AI 憲章 — Anthropic 與川普政府的全面對抗事件簿（2025–2026）",
-  "description": "從軍事化導火線到全球禁用令：一場國家隱形之手與 AI 安全憲章的全面戰爭。沉浸式互動時間軸，18 個關鍵事件、權威報導引用、可逐頁全螢幕閱讀。 | From the militarization flashpoint to a global ban: the total war between the state and an AI 'safety charter.' An immersive interactive timeline with 18 key events and cited reporting.",
+  "description": "從軍事化導火線到全球禁用令：一場國家隱形之手與 AI 安全憲章的全面戰爭。沉浸式互動時間軸，19 個關鍵事件、權威報導引用、可逐頁全螢幕閱讀。 | From the militarization flashpoint to a global ban: the total war between the state and an AI 'safety charter.' An immersive interactive timeline with 19 key events and cited reporting.",
   "image": "https://austin-liang.github.io/ai-charter-vs-state/og-cover.png",
   "inLanguage": "zh-Hant",
   "datePublished": "2026-06-14",
@@ -755,6 +755,20 @@ const EVENTS = [
     ]
   },
   {
+    date:'2026 年 6 月 16 日', rail:"6/16", chapter:'監管混亂', side:'court',
+    sideLabel:'⚖ 法律授權存疑', balance:0.05,
+    title:'政府憑什麼關模型？一場暴露監管真空的「混亂」',
+    body:[
+      '當塵埃還沒落定，最尖銳的問題浮上檯面：<strong>政府到底有什麼法律授權</strong>，能下令叫停一個已商用的 AI 模型？據 NPR，這道指令名義上只限制<strong>外國使用者／非美國公民</strong>存取，卻寬到連 Anthropic <strong>自家美籍員工</strong>都被掃進去；公司為求合規，只能<strong>對所有人關閉</strong> Fable 5 與 Mythos 5。法律依據與適用範圍的模糊，讓外界看不懂這套「監管」究竟是規則，還是臨時起意。',
+      '法律學者警告其<strong>寒蟬效應</strong>：Emory 大學 AI 倫理法學教授 <strong>Ifeoma Ajunwa</strong> 指出，若企業認定自己無法全球擴張、認定美國是「不友善的營商環境」，最終只會<span class="em-anth">出走別處</span>。Anthropic 維持低調，僅稱「<strong>雙方正快速合作解決</strong>」——但截至報導，仍無明確恢復時程，也無清楚規則可循。'
+    ],
+    callout:{type:'quote', text:'「若一家公司覺得自己無法全球擴張、覺得美國是個不友善的營商環境……那它就會出走別處。」', src:'— Emory 大學法學教授 Ifeoma Ajunwa（NPR 訪談）'},
+    tags:['監管真空','法律授權','寒蟬效應','Ajunwa','商務部'],
+    sources:[
+      {pub:'NPR', t:'Anthropic 事件讓川普政府的 AI 監管陷入混亂', u:'https://www.npr.org/2026/06/16/nx-s1-5859275/anthropic-incident-leaves-confusion-about-trump-administrations-ai-regulation'}
+    ]
+  },
+  {
     date:'2026 年 6 月 17 日', rail:"6/17", chapter:'G7 角力', side:'ally',
     sideLabel:'🌐 民主同盟發聲', balance:0.12,
     title:'AI 上 G7 圓桌：禁令引爆「誰能用模型」的主權角力',
@@ -971,6 +985,17 @@ const EVENTS_EN = [
     sources:[`Anthropic to meet with the Trump administration over the Mythos dispute`,`Anthropic races to lift the Fable 5 ban: engineers sent to Washington`,`How a warning from Amazon led the White House to shut down Mythos`]
   },
   {
+    date:`Jun 16, 2026`, chapter:`Regulatory Confusion`, sideLabel:`⚖ Authority in Question`,
+    title:`By What Authority? An Incident That Lays Bare a Regulatory Vacuum`,
+    body:[
+      `Before the dust settled, the sharpest question surfaced: <strong>what legal authority</strong> lets the government order a commercial AI model switched off? Per NPR, the directive nominally restricted access only to <strong>foreign users / non-U.S. citizens</strong> — yet swept so broadly it caught Anthropic's <strong>own American employees</strong>; to comply, the company simply <strong>shut Fable 5 and Mythos 5 down for everyone</strong>. The murk over the statutory basis and the scope left observers unsure whether this "regulation" was a rule at all, or an improvisation.`,
+      `Legal scholars warned of the <strong>chilling effect</strong>: Emory University AI-ethics law professor <strong>Ifeoma Ajunwa</strong> noted that if a company decides it can't expand globally and that the U.S. is an "unwelcoming business home," it will simply <span class="em-anth">go elsewhere</span>. Anthropic kept a low profile, saying only that "<strong>both parties are working quickly to get this resolved</strong>" — but as of the reporting there was still no clear timeline to come back online, and no clear rule to follow.`
+    ],
+    callout:{text:`"If a company feels like it's not going to be able to globally expand and that the U.S. is an unwelcoming business home, then ... that company is going to go elsewhere."`, src:`— Prof. Ifeoma Ajunwa, Emory University (to NPR)`},
+    tags:[`Regulatory Vacuum`,`Legal Authority`,`Chilling Effect`,`Ajunwa`,`Commerce Dept`],
+    sources:[`Anthropic incident leaves confusion about the Trump administration's AI regulation`]
+  },
+  {
     date:`Jun 17, 2026`, chapter:`G7 Showdown`, sideLabel:`🌐 Democracies Speak`,
     title:`AI Takes the G7 Table: The Ban Ignites a "Who Gets to Use the Model" Sovereignty Fight`,
     body:[
@@ -1087,8 +1112,9 @@ const EVENT_IMAGES = [
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Bruce_Schneier_at_CoPS2013-IMG_9174.jpg/1920px-Bruce_Schneier_at_CoPS2013-IMG_9174.jpg', portrait:true},  // Bruce Schneier — 資安界代表性連署人（FreeFable 公開信）
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/European_Parliament_Strasbourg_Hemicycle_-_Diliff.jpg/1920px-European_Parliament_Strasbourg_Hemicycle_-_Diliff.jpg'},  // 歐洲議會半圓議事廳（史特拉斯堡）— 歐盟主權 AI 反彈（事件 15）
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/The_White_House_June_2024.jpg/1920px-The_White_House_June_2024.jpg'},  // 白宮（華府）— 危機談判（事件 16）
-  {src:'event17-g7.jpg'},  // G7 France Évian 2026 官方會徽（CC0，自製暖色燭光合成）— G7 圓桌角力（事件 17）
-  {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Business_agreement_handshake_at_coffee_shop.jpg/1920px-Business_agreement_handshake_at_coffee_shop.jpg', pos:'center 40%'}  // 商務握手達成協議（CC0）— 信賴／合作／雙贏 — 可信夥伴（事件 18）
+  {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Commerce_Building_aerial_view_from_14th_Street.jpg/1920px-Commerce_Building_aerial_view_from_14th_Street.jpg'},  // 美國商務部赫伯特·胡佛大樓（華府）— 監管混亂／法律授權存疑（事件 17）
+  {src:'event17-g7.jpg'},  // G7 France Évian 2026 官方會徽（CC0，自製暖色燭光合成）— G7 圓桌角力（事件 18）
+  {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Business_agreement_handshake_at_coffee_shop.jpg/1920px-Business_agreement_handshake_at_coffee_shop.jpg', pos:'center 40%'}  // 商務握手達成協議（CC0）— 信賴／合作／雙贏 — 可信夥伴（事件 19）
 ];
 const bgstage = document.getElementById('bgstage');
 const bgLayersWrap = document.getElementById('bglayers');
