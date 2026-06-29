@@ -25,7 +25,7 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://austin-liang.github.io/ai-charter-vs-state/">
 <meta property="og:title" content="國家機器 vs. AI 憲章 — Anthropic 與川普政府的全面對抗事件簿（2025–2026）">
-<meta property="og:description" content="從軍事化導火線到全球禁用令：一場國家隱形之手與 AI 安全憲章的全面戰爭。沉浸式互動時間軸，21 個關鍵事件、權威報導引用、可逐頁全螢幕閱讀。 | From the militarization flashpoint to a global ban: the total war between the state and an AI 'safety charter.' An immersive interactive timeline — 21 key events, cited reporting, and a fullscreen page-by-page mode. (Traditional Chinese / English)">
+<meta property="og:description" content="從軍事化導火線到全球禁用令：一場國家隱形之手與 AI 安全憲章的全面戰爭。沉浸式互動時間軸，22 個關鍵事件、權威報導引用、可逐頁全螢幕閱讀。 | From the militarization flashpoint to a global ban: the total war between the state and an AI 'safety charter.' An immersive interactive timeline — 22 key events, cited reporting, and a fullscreen page-by-page mode. (Traditional Chinese / English)">
 <meta property="og:image" content="https://austin-liang.github.io/ai-charter-vs-state/og-cover.png">
 <meta property="og:image:secure_url" content="https://austin-liang.github.io/ai-charter-vs-state/og-cover.png">
 <meta property="og:image:type" content="image/png">
@@ -47,7 +47,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "國家機器 vs. AI 憲章 — Anthropic 與川普政府的全面對抗事件簿（2025–2026）",
-  "description": "從軍事化導火線到全球禁用令：一場國家隱形之手與 AI 安全憲章的全面戰爭。沉浸式互動時間軸，21 個關鍵事件、權威報導引用、可逐頁全螢幕閱讀。 | From the militarization flashpoint to a global ban: the total war between the state and an AI 'safety charter.' An immersive interactive timeline with 21 key events and cited reporting.",
+  "description": "從軍事化導火線到全球禁用令：一場國家隱形之手與 AI 安全憲章的全面戰爭。沉浸式互動時間軸，22 個關鍵事件、權威報導引用、可逐頁全螢幕閱讀。 | From the militarization flashpoint to a global ban: the total war between the state and an AI 'safety charter.' An immersive interactive timeline with 22 key events and cited reporting.",
   "image": "https://austin-liang.github.io/ai-charter-vs-state/og-cover.png",
   "inLanguage": "zh-Hant",
   "datePublished": "2026-06-14",
@@ -839,6 +839,24 @@ const EVENTS = [
       {pub:'The Next Web', t:'G7 會晤後，川普稱 Anthropic 不再是國安威脅', u:'https://thenextweb.com/news/trump-anthropic-not-national-security-threat-axios-interview'},
       {pub:'CSIS', t:'商務部限制 Anthropic 最新模型存取——接下來會如何？', u:'https://www.csis.org/analysis/department-commerce-restricted-access-anthropics-latest-models-what-comes-next'}
     ]
+  },
+  {
+    date:'2026 年 6 月 27 日', rail:"6/27", chapter:'解禁在即', side:'anthropic',
+    sideLabel:'🔓 禁令鬆綁', balance:-0.25,
+    title:'解禁在即：商務部先放行 Mythos 5，Fable 5「最快這週」回歸',
+    body:[
+      '禁令出現第一道實質裂縫。據《Axios》與 NPR 報導，商務部於<strong>週五（6/26）</strong>部分撤銷對 Anthropic 最強模型的出口管制，先行放行不受限的 <strong>Mythos 5</strong>——但僅限一份<strong>逾 100 家「受信任夥伴」</strong>名單：政府核可的企業、聯邦機構、財星 500 大、研究機構與<span class="em-state">關鍵基礎設施業者</span>，用以支撐 Anthropic 的資安計畫「<strong>Project Glasswing</strong>」。換言之，模型回來了，但<span class="em-state">回到誰手上，由政府逐一點名</span>。',
+      '更強的 <strong>Fable 5</strong> 則「即將」跟上。《Axios》<strong>週六（6/27）</strong>引消息人士稱，川普政府已接近批准恢復 Fable 5 存取，限制<strong>最快「這週」（6/29 那週）解除</strong>；該模型自 <strong>6/12</strong> 停用至此已<strong>足足 15 天</strong>。多數機關已認定 Fable 5 可安全「重新放回市場」，但仍卡在<span class="em-state">五角大廈與國安局（NSA）兩道關卡</span>未點頭——技術談判預計延續整個週末。',
+      '但別把這讀成「川普讓步」。這場部分解禁，反而<span class="em-state">坐實了一套全新的權力框架</span>：聯邦政府從此對<strong>前沿模型的發布</strong>握有直接否決權，並憑空長出一層原本不存在的「<strong>受信任夥伴</strong>」存取層級。Anthropic 固然重獲上架權，代價卻是——<span class="em-anth">最強模型能賣給誰、何時上線，往後都要看華府臉色</span>。曙光是真的，但那扇門，是政府替它開的。'
+    ],
+    callout:{type:'quote', text:'模型回來了，但「回到誰手上」由政府逐一點名——一層原本不存在的「受信任夥伴」存取權，就此誕生。', src:'— 事件評述'},
+    tags:['解禁在即','Mythos 5','Fable 5','Project Glasswing','受信任夥伴','NSA','Axios'],
+    sources:[
+      {pub:'Axios', t:'獨家：Anthropic 最強模型 Fable 5「即將」回歸', u:'https://www.axios.com/2026/06/27/anthropic-fable-5-return-soon'},
+      {pub:'Axios', t:'Mythos 將回歸——僅限政府核可的一份名單', u:'https://www.axios.com/2026/06/27/commerce-anthropic-mythos-restrictions-lift'},
+      {pub:'NPR', t:'川普政府部分撤銷對 Anthropic 最強模型的出口禁令', u:'https://www.npr.org/2026/06/27/nx-s1-5871245/trump-administration-imposes-restrictions-for-anthropic-to-halt-access-to-2-ai-models'},
+      {pub:'The Hill', t:'聯邦政府准許 Anthropic 將 Mythos 模型釋出給特定企業', u:'https://thehill.com/policy/technology/5943549-anthropic-mythos-5-access/'}
+    ]
   }
 ];
 
@@ -1077,6 +1095,18 @@ const EVENTS_EN = [
     callout:{text:`"Well, not now, but a week ago, maybe."`, src:`— Trump, in his Axios interview (released Jun 19, 2026)`},
     tags:[`Trump`,`Axios`,`The Thaw`,`Tremendous Liability`,`DPA`,`Amodei`],
     sources:[`Exclusive: Trump tells "The Axios Show" Anthropic was a national-security threat`,`Trump tells Axios he no longer views Anthropic as a national-security threat`,`Trump says Anthropic no longer a national-security threat after the G7`,`Commerce restricted access to Anthropic's latest models — what comes next? (CSIS)`]
+  },
+  {
+    date:`Jun 27, 2026`, chapter:`The Reprieve`, sideLabel:`🔓 Restrictions Ease`,
+    title:`The Reprieve: Commerce Clears Mythos 5 First; Fable 5 to Return "as Soon as This Week"`,
+    body:[
+      `The first real crack in the ban. Per Axios and NPR, the Commerce Department on <strong>Friday (Jun 26)</strong> partially rescinded its export controls on Anthropic's most powerful models, clearing the unrestricted <strong>Mythos 5</strong> first — but only for a list of <strong>more than 100 "trusted partners"</strong>: government-approved companies, federal agencies, Fortune 500 firms, research institutions and <span class="em-state">critical-infrastructure operators</span>, in support of Anthropic's cybersecurity effort "<strong>Project Glasswing</strong>." The models are back — but <span class="em-state">who gets them is named by the government, one by one</span>.`,
+      `The more powerful <strong>Fable 5</strong> is "next." On <strong>Saturday (Jun 27)</strong>, Axios reported, citing sources, that the Trump administration is close to approving the restoration of Fable 5 access, with limits potentially lifted <strong>"as soon as this week"</strong>; the model had been dark for a full <strong>15 days</strong> since <strong>Jun 12</strong>. Most agencies have judged that Fable 5 can safely "return to the wild," but it still hinges on <span class="em-state">two gates — the Pentagon and the National Security Agency (NSA)</span> — with technical talks expected to run through the weekend.`,
+      `But don't read this as "Trump backing down." If anything, this partial lift <span class="em-state">cements a brand-new framework of power</span>: the federal government now holds a direct veto over <strong>frontier-model releases</strong>, conjuring a "<strong>trusted partner</strong>" access tier that did not exist before. Anthropic regains the right to ship — but the price is that <span class="em-anth">who its strongest models can be sold to, and when they go live, will hereafter turn on Washington's say-so</span>. The dawn is real, but the door was opened by the government.`
+    ],
+    callout:{text:`The models are back — but "who gets them" is named by the government, one by one. A "trusted partner" tier of access that never existed before is now born.`, src:`— Editorial note`},
+    tags:[`The Reprieve`,`Mythos 5`,`Fable 5`,`Project Glasswing`,`Trusted Partners`,`NSA`,`Axios`],
+    sources:[`Scoop: Powerful Anthropic model, Fable 5, on track to return soon`,`Anthropic's Mythos is coming back for a select group of entities approved by the U.S. government`,`Trump administration partially lifts the export ban on Anthropic's most advanced AI model`,`Federal government permits release of Anthropic's Mythos model to select companies`]
   }
 ];
 
@@ -1175,7 +1205,8 @@ const EVENT_IMAGES = [
   {src:'event17-g7.jpg'},  // G7 France Évian 2026 官方會徽（CC0，自製暖色燭光合成）— G7 圓桌角力（事件 18）
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Business_agreement_handshake_at_coffee_shop.jpg/1920px-Business_agreement_handshake_at_coffee_shop.jpg', pos:'center 40%'},  // 商務握手達成協議（CC0）— 信賴／合作／雙贏 — 可信夥伴（事件 19）
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Howard_Lutnick_2025.jpg/1920px-Howard_Lutnick_2025.jpg', portrait:true},  // 商務部長 Howard Lutnick 官方肖像 — 提案遞交對象 — 和解提案（事件 20）
-  {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Dario_Amodei_at_TechCrunch_Disrupt_2023_01_%28cropped%29.jpg/1920px-Dario_Amodei_at_TechCrunch_Disrupt_2023_01_%28cropped%29.jpg', portrait:true}  // Dario Amodei 肖像 — 川普鬆口稱其「聰明、負責」— 政策轉向（事件 21）
+  {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Dario_Amodei_at_TechCrunch_Disrupt_2023_01_%28cropped%29.jpg/1920px-Dario_Amodei_at_TechCrunch_Disrupt_2023_01_%28cropped%29.jpg', portrait:true},  // Dario Amodei 肖像 — 川普鬆口稱其「聰明、負責」— 政策轉向（事件 21）
+  {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/BalticServers_data_center.jpg/1920px-BalticServers_data_center.jpg'}  // 資料中心伺服器陣列 — Mythos 5 重新上線、回到關鍵基礎設施（Project Glasswing）— 解禁在即（事件 22）
 ];
 const bgstage = document.getElementById('bgstage');
 const bgLayersWrap = document.getElementById('bglayers');
