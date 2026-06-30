@@ -25,7 +25,7 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://austin-liang.github.io/ai-charter-vs-state/">
 <meta property="og:title" content="國家機器 vs. AI 憲章 — Anthropic 與川普政府的全面對抗事件簿（2025–2026）">
-<meta property="og:description" content="從軍事化導火線到全球禁用令：一場國家隱形之手與 AI 安全憲章的全面戰爭。沉浸式互動時間軸，22 個關鍵事件、權威報導引用、可逐頁全螢幕閱讀。 | From the militarization flashpoint to a global ban: the total war between the state and an AI 'safety charter.' An immersive interactive timeline — 22 key events, cited reporting, and a fullscreen page-by-page mode. (Traditional Chinese / English)">
+<meta property="og:description" content="從軍事化導火線到全球禁用令：一場國家隱形之手與 AI 安全憲章的全面戰爭。沉浸式互動時間軸，23 個關鍵事件、權威報導引用、可逐頁全螢幕閱讀。 | From the militarization flashpoint to a global ban: the total war between the state and an AI 'safety charter.' An immersive interactive timeline — 23 key events, cited reporting, and a fullscreen page-by-page mode. (Traditional Chinese / English)">
 <meta property="og:image" content="https://austin-liang.github.io/ai-charter-vs-state/og-cover.png">
 <meta property="og:image:secure_url" content="https://austin-liang.github.io/ai-charter-vs-state/og-cover.png">
 <meta property="og:image:type" content="image/png">
@@ -47,7 +47,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "國家機器 vs. AI 憲章 — Anthropic 與川普政府的全面對抗事件簿（2025–2026）",
-  "description": "從軍事化導火線到全球禁用令：一場國家隱形之手與 AI 安全憲章的全面戰爭。沉浸式互動時間軸，22 個關鍵事件、權威報導引用、可逐頁全螢幕閱讀。 | From the militarization flashpoint to a global ban: the total war between the state and an AI 'safety charter.' An immersive interactive timeline with 22 key events and cited reporting.",
+  "description": "從軍事化導火線到全球禁用令：一場國家隱形之手與 AI 安全憲章的全面戰爭。沉浸式互動時間軸，23 個關鍵事件、權威報導引用、可逐頁全螢幕閱讀。 | From the militarization flashpoint to a global ban: the total war between the state and an AI 'safety charter.' An immersive interactive timeline with 23 key events and cited reporting.",
   "image": "https://austin-liang.github.io/ai-charter-vs-state/og-cover.png",
   "inLanguage": "zh-Hant",
   "datePublished": "2026-06-14",
@@ -857,6 +857,24 @@ const EVENTS = [
       {pub:'NPR', t:'川普政府部分撤銷對 Anthropic 最強模型的出口禁令', u:'https://www.npr.org/2026/06/27/nx-s1-5871245/trump-administration-imposes-restrictions-for-anthropic-to-halt-access-to-2-ai-models'},
       {pub:'The Hill', t:'聯邦政府准許 Anthropic 將 Mythos 模型釋出給特定企業', u:'https://thehill.com/policy/technology/5943549-anthropic-mythos-5-access/'}
     ]
+  },
+  {
+    date:'2026 年 6 月 27 日', rail:"6/27", chapter:'殊途同歸', side:'state',
+    sideLabel:'🏛 政府逐一發牌', balance:-0.5,
+    title:'殊途同歸：OpenAI 低調配合，GPT-5.6 Sol 僅限白宮核可的約 20 家客戶',
+    body:[
+      '同一個週末，故事的另一面浮現。與 Anthropic 提告硬抗截然不同，OpenAI 選擇<strong>低調配合</strong>白宮：該公司<strong>週五（6/26）</strong>宣布最新旗艦模型 <strong>GPT-5.6 Sol</strong> 暫不公開上線，僅開放給<strong>川普政府逐一核可的約 20 家「受信任夥伴」</strong>——每一個拿到金鑰的客戶名字，都得經政府<span class="em-state">個別點頭</span>。CEO <strong>Sam Altman</strong> 已於週三（6/24）就模型發布與商務部長 <strong>Howard Lutnick</strong> 溝通。',
+      'OpenAI 強調這只是過渡措施，且 Sol「更擅長幫人發現並修補漏洞」而非發動攻擊、未跨越自身風險閾值：「<strong>我們不認為這類政府審查流程應成為長期預設值</strong>」，並期望「未來幾週內」更廣泛發布。但據《AP》，這是美國 AI 公司<span class="em-state">首度在「政府控管的存取名單」下發布前沿模型</span>；出手要求限流的，是白宮兩個辦公室——國家網路總監辦公室（<strong>ONCD</strong>）與科技政策辦公室（<strong>OSTP</strong>）。',
+      '真正的轉折在這裡：Anthropic 是<strong>被罰</strong>的那一個（被當成威脅、模型遭封殺、被迫提告），OpenAI 是<strong>配合</strong>的那一個（主動限流、低調協商）——但兩條路<span class="em-state">殊途同歸，最後都被裝進同一張政府逐一點名的名單</span>。這證明「受信任夥伴」門禁<strong>已不再是針對 Anthropic 的個案懲罰，而是適用於所有前沿模型的制度常態</strong>：連不反抗的人，也得排隊領牌。'
+    ],
+    callout:{type:'quote', text:'門禁不再挑對象：硬抗的 Anthropic 與配合的 OpenAI，最後都被裝進同一張政府點名的名單——「受信任夥伴」已從對單一公司的懲罰，變成所有前沿模型的預設常態。', src:'— 事件評述'},
+    tags:['GPT-5.6 Sol','OpenAI','受信任夥伴','政府核可','ONCD','OSTP','AP'],
+    sources:[
+      {pub:'AP News', t:'OpenAI 與 Anthropic 在資安審查期間，將新模型限縮給川普核可客戶', u:'https://abcnews.com/Technology/wireStory/openai-limits-latest-chatgpt-product-trump-approved-customers-134250062'},
+      {pub:'Axios', t:'川普政府要求 OpenAI 限制 GPT-5.6 發布', u:'https://www.axios.com/2026/06/25/trump-administration-openai-gpt-model-release'},
+      {pub:'Axios', t:'OpenAI 在限制下發布強大新模型（Sol／Terra／Luna）', u:'https://www.axios.com/2026/06/26/openai-gpt-sol-terra-luna-trump'},
+      {pub:'TechCrunch', t:'OpenAI 應政府要求限縮 GPT-5.6 發布，稱限制不應成為常態', u:'https://techcrunch.com/2026/06/26/openai-limits-gpt-5-6-rollout-after-government-request-says-restrictions-shouldnt-be-the-norm/'}
+    ]
   }
 ];
 
@@ -1107,6 +1125,18 @@ const EVENTS_EN = [
     callout:{text:`The models are back — but "who gets them" is named by the government, one by one. A "trusted partner" tier of access that never existed before is now born.`, src:`— Editorial note`},
     tags:[`The Reprieve`,`Mythos 5`,`Fable 5`,`Project Glasswing`,`Trusted Partners`,`NSA`,`Axios`],
     sources:[`Scoop: Powerful Anthropic model, Fable 5, on track to return soon`,`Anthropic's Mythos is coming back for a select group of entities approved by the U.S. government`,`Trump administration partially lifts the export ban on Anthropic's most advanced AI model`,`Federal government permits release of Anthropic's Mythos model to select companies`]
+  },
+  {
+    date:`Jun 27, 2026`, chapter:`Converging Paths`, sideLabel:`🏛 Licensed One by One`,
+    title:`Converging Paths: OpenAI Quietly Complies — GPT-5.6 Sol Limited to ~20 White-House-Approved Customers`,
+    body:[
+      `The same weekend, the other face of the story. Unlike Anthropic, which fought back in court, OpenAI chose to <strong>quietly comply</strong> with the White House: on <strong>Friday (Jun 26)</strong> it announced that its new flagship model <strong>GPT-5.6 Sol</strong> would not launch publicly, opening only to <strong>roughly 20 "trusted partners," each approved by the Trump administration one by one</strong> — every customer's name had to be <span class="em-state">individually cleared by the government</span> to get a key. CEO <strong>Sam Altman</strong> had already spoken with Commerce Secretary <strong>Howard Lutnick</strong> about the release on Wednesday (Jun 24).`,
+      `OpenAI stressed this was only a temporary measure — that Sol is "better at helping people find and fix vulnerabilities" than at carrying out attacks, and does not cross its own risk threshold: "<strong>We don't believe this kind of government access process should become the long-term default</strong>," it said, hoping for broader availability "in the coming weeks." But per <strong>AP</strong>, this is the <span class="em-state">first time a U.S. AI company has launched a frontier model under a government-managed access list</span>; the limit was requested jointly by two White House offices — the Office of the National Cyber Director (<strong>ONCD</strong>) and the Office of Science and Technology Policy (<strong>OSTP</strong>).`,
+      `Here is the real turn: Anthropic was the one <strong>punished</strong> (branded a threat, its models pulled, forced to sue); OpenAI was the one that <strong>complied</strong> (self-limiting, negotiating quietly) — yet both paths <span class="em-state">converge on the same government-named list</span>. It proves the "trusted partner" gate is <strong>no longer a one-off punishment aimed at Anthropic, but the institutional default for every frontier model</strong>: even those who don't resist must queue for a license.`
+    ],
+    callout:{text:`The gate no longer picks its targets: defiant Anthropic and compliant OpenAI both end up on the same government-named list — the "trusted partner" tier has gone from a punishment of one company to the default for every frontier model.`, src:`— Editorial note`},
+    tags:[`GPT-5.6 Sol`,`OpenAI`,`Trusted Partners`,`Government Approval`,`ONCD`,`OSTP`,`AP`],
+    sources:[`OpenAI and Anthropic limit new AI models to Trump-approved customers during a cybersecurity review (AP)`,`Trump administration asks OpenAI to limit the release of GPT-5.6 (Axios)`,`OpenAI releases a powerful new GPT-5.6 model under restrictions — Sol, Terra, Luna (Axios)`,`OpenAI limits GPT-5.6 rollout after a government request, says restrictions shouldn't be the norm (TechCrunch)`]
   }
 ];
 
@@ -1206,7 +1236,8 @@ const EVENT_IMAGES = [
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Business_agreement_handshake_at_coffee_shop.jpg/1920px-Business_agreement_handshake_at_coffee_shop.jpg', pos:'center 40%'},  // 商務握手達成協議（CC0）— 信賴／合作／雙贏 — 可信夥伴（事件 19）
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Howard_Lutnick_2025.jpg/1920px-Howard_Lutnick_2025.jpg', portrait:true},  // 商務部長 Howard Lutnick 官方肖像 — 提案遞交對象 — 和解提案（事件 20）
   {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Dario_Amodei_at_TechCrunch_Disrupt_2023_01_%28cropped%29.jpg/1920px-Dario_Amodei_at_TechCrunch_Disrupt_2023_01_%28cropped%29.jpg', portrait:true},  // Dario Amodei 肖像 — 川普鬆口稱其「聰明、負責」— 政策轉向（事件 21）
-  {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/BalticServers_data_center.jpg/1920px-BalticServers_data_center.jpg'}  // 資料中心伺服器陣列 — Mythos 5 重新上線、回到關鍵基礎設施（Project Glasswing）— 解禁在即（事件 22）
+  {src:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/BalticServers_data_center.jpg/1920px-BalticServers_data_center.jpg'},  // 資料中心伺服器陣列 — Mythos 5 重新上線、回到關鍵基礎設施（Project Glasswing）— 解禁在即（事件 22）
+  {src:'https://upload.wikimedia.org/wikipedia/commons/5/5a/Meeting_with_Masayoshi_Son_and_Sam_Altman_%28February_3%2C_2025%29_%283x4_cropped_on_Altman%29.jpg', portrait:true}  // Sam Altman 肖像 — OpenAI 低調配合、GPT-5.6 Sol 限流給政府核可客戶 — 殊途同歸（事件 23）
 ];
 const bgstage = document.getElementById('bgstage');
 const bgLayersWrap = document.getElementById('bglayers');
